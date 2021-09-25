@@ -6,14 +6,19 @@ import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import tw from "tailwind-react-native-classnames";
 import Header from "../components/Header";
+import SuggestedWatch from "../components/SuggestedWatch";
 
 const TabOneScreen = ({ navigation }: RootTabScreenProps<'TabOne'>) => {
   return (
     <View style={tw`flex`}>
       {/*  Header   */}
-        <Header />
-        <View style={tw` flex-1 items-center justify-center`}>
-            <Text style={tw`font-bold text-4xl`}>Youtube 🚀️</Text>
+        <View style={tw``}>
+            <Header />
+            <SuggestedWatch />
+        </View>
+
+        <View style={tw``}>
+
         </View>
     </View>
   );
