@@ -27,6 +27,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false,  }}>
+    {/*// @ts-ignore*/}
             <Stack.Screen name="WelcomeScreen" component={TabOneScreen} />
             <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
         </Stack.Navigator>
