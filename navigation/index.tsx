@@ -9,6 +9,7 @@ import { RootStackParamList } from '../types';
 
 import TabOneScreen from "../screens/TabOneScreen";
 import LinkingConfiguration from "./LinkingConfiguration";
+import BottomTabNavigator from "./BottomTabNavigator";
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
     return (
@@ -28,6 +29,7 @@ function RootNavigator() {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false,  }}>
     {/*// @ts-ignore*/}
+            <Stack.Screen name="Root" component={BottomTabNavigator} />
             <Stack.Screen name="WelcomeScreen" component={TabOneScreen} />
             <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
         </Stack.Navigator>
