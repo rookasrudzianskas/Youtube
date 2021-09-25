@@ -15,8 +15,7 @@ export default function BottomTabNavigator() {
     return (
         <BottomTab.Navigator
             initialRouteName="Home"
-            screenOptions={{
-            }}
+            screenOptions={{ headerShown: false,  }}
     // @ts-ignore
     //         tabBarOptions={{ activeTintColor: '#274156', activeBackgroundColor: '#fbfcff', inactiveBackgroundColor: '#fbfcff' }}
         >
