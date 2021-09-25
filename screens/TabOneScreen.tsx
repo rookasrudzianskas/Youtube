@@ -9,7 +9,7 @@ import tw from "tailwind-react-native-classnames";
 const TabOneScreen = ({ navigation }: RootTabScreenProps<'TabOne'>) => {
   return (
     <View style={tw`flex flex-1 items-center justify-center`}>
-      <Text style={tw`font-bold text-lg`}>Youtube 🙅‍♂️</Text>
+      <Text style={tw`font-bold text-4xl`}>Youtube 🚀️</Text>
     </View>
   );
 }
