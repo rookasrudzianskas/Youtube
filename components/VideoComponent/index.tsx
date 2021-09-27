@@ -12,6 +12,14 @@ const VideoComponent = () => {
                         <Text style={tw`text-white`}>14:53</Text>
                     </View>
                 </View>
+
+                <View style={tw``}>
+                {/*    avatar   */}
+
+                {/*    middle container */}
+
+                {/*    title row    */}
+                </View>
             </View>
         </View>
     );
