@@ -13,10 +13,10 @@ const VideoPlayer = (props: VideoPlayerProps) => {
     return (
         <View>
             <Video
-                source={{ uri: 'https://www.youtube.com/embed/cwhC19Fa_84' }}
+                source={{ uri: videoURI }}
                 style={{width: '100%', aspectRatio: 16/9}}
                 posterSource={{
-                    uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/thumbnails/thumbnail1.jpeg',
+                    uri: thumbnailURI,
                 }}
                 posterStyle={{
                     resizeMode: 'cover',
