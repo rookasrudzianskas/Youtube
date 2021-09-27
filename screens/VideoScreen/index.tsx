@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text, Image, ScrollView} from "react-native";
+import React, {useRef} from 'react';
+import {View, Text, Image, ScrollView, TouchableOpacity} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import video from '../../assets/data/video.json';
 import {AntDesign} from "@expo/vector-icons";
@@ -11,6 +11,11 @@ const VideoScreen = () => {
         viewsString = (video.views / 1_000_000).toFixed(1) + 'M'
     } else if (video.views > 1_000) {
         viewsString = (video.views / 1_000).toFixed(1) + 'K'
+    }
+    const commentsSheetRef = useRef<BottomSheetModal>(null);
+
+    const openComments = () => {
+        commentsSheetRef.current?.present();
     }
 
     return (
@@ -89,6 +94,15 @@ const VideoScreen = () => {
                 </View>
 
 
+                <View style={tw`mt-4`}>
+                    <TouchableOpacity onPress={openComments} activeOpacity={0.8}>
+                        <View style={tw`flex flex-row`}>
+                            <Text style={tw`text-gray-100 text-lg`}>Comments</Text>
+                            <Text style={tw`text-gray-400 text-lg ml-3`}>300</Text>
+                        </View>
+                        {/*<VideoComment comment={comments[0]}/>*/}
+                    </TouchableOpacity>
+                </View>
 
             </View>
         </View>
