@@ -13,9 +13,9 @@ const VideoScreen = () => {
 
     let viewsString = video.views.toString();
     if (video.views > 1_000_000){
-        viewsString = (video.views / 1_000_000).toFixed(1) + 'M'
+        viewsString = (video.views / 1_000_000).toFixed(1) + 'M';
     } else if (video.views > 1_000) {
-        viewsString = (video.views / 1_000).toFixed(1) + 'K'
+        viewsString = (video.views / 1_000).toFixed(1) + 'K';
     }
     const commentsSheetRef = useRef<BottomSheetModal>(null);
 
