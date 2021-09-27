@@ -135,7 +135,7 @@ const VideoScreen = () => {
                 </View>
             </ScrollView>
 
-            <BottomSheet ref={commentsSheetRef} snapPoints={['100%']} index={-1}>
+            <BottomSheet ref={commentsSheetRef} snapPoints={[0, '100%']} index={-1}>
                 <Text>Hello</Text>
             </BottomSheet>
 
