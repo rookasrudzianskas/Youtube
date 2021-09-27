@@ -1,9 +1,10 @@
 import React from 'react';
-import {View, Text} from "react-native";
+import {View, Text, FlatList} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import Header from "../components/Header";
 import SuggestedWatch from "../components/SuggestedWatch";
 import VideoListItem from "../components/VideoListItem";
+import videos from '../assets/data/videos.json';
 
 const HomeScreen = () => {
     return (
@@ -15,7 +16,9 @@ const HomeScreen = () => {
             </View>
 
             <View style={tw``}>
-                <VideoListItem />
+                <FlatList  data={videos} renderItem={({item}) => (
+                    <VideoListItem key={item.id} item={item} />
+                )}/>
             </View>
         </View>
     );
