@@ -19,16 +19,15 @@ interface VideoCommentProps {
     }
 }
 
-const VideoComment = (props: VideoCommentProps) => {
+const VideoComment = ({comment}: VideoCommentProps) => {
     return (
-        <View style={{backgroundColor: '#141414', flex: 1}}>
+        <View style={tw`flex flex-row items-center`}>
             {/*<BottomSheetFlatList*/}
             {/*    data={comments}*/}
             {/*    renderItem={({item}) => <VideoComment comment={item} />}*/}
             {/*/>*/}
-
-            <Image source={{uri: video?.user?.image}} style={tw`w-10 h-10 rounded-full`} />
-            <Text style={tw`text-gray-100 ml-2`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, repellat.</Text>
+            <Image source={{uri: comment?.user?.image}} style={tw`w-10 h-10 rounded-full`} />
+            <Text style={tw`text-gray-100 ml-2`}>{comment?.comment}</Text>
         </View>
     )
 }
