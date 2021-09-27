@@ -20,4 +20,4 @@ const VideoComments = () => {
     )
 }
 
-export default VideoComments
+export default VideoComments;
