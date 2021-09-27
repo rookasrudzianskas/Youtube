@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {View, Text, Image, ScrollView, TouchableOpacity, Pressable, FlatList} from "react-native";
+import {View, Text, Image, ScrollView, TouchableOpacity, Pressable, FlatList, SafeAreaView} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import video from '../../assets/data/video.json';
 import {AntDesign} from "@expo/vector-icons";
@@ -131,3 +131,20 @@ const VideoScreen = () => {
 };
 
 export default VideoScreen;
+
+
+// const VideoScreenWithRecommendation = () => {
+//     return (
+//         <SafeAreaView style={{backgroundColor: '#141414', flex: 1}}>
+//             <BottomSheetModalProvider>
+//                 <FlatList
+//                     data={videos}
+//                     renderItem={({item}) => <VideoListItem video={item} />}
+//                     ListHeaderComponent={VideoScreen}
+//                 />
+//             </BottomSheetModalProvider>
+//         </SafeAreaView>
+//     )
+// }
+//
+// export default VideoScreenWithRecommendation;
