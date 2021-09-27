@@ -111,13 +111,11 @@ const VideoScreen = () => {
                                 <View style={tw``}>
                                     {/*<VideoComment comment={comments[0]}/>*/}
                                     <TouchableOpacity activeOpacity={0.8}>
-                                        <View style={tw`flex flex-row items-center my-2  h-60`}>
-                                            {/*<Image source={{uri: video?.user?.image}} style={tw`w-10 h-10 rounded-full`} />*/}
-                                            {/*<Text style={tw`text-gray-100 ml-2`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, repellat.</Text>*/}
+                                        <View style={tw`flex flex-row items-center my-2`}>
+                                            <Image source={{uri: video?.user?.image}} style={tw`w-10 h-10 rounded-full`} />
+                                            <Text style={tw`text-gray-100 ml-2`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, repellat.</Text>
                                         {/*<VideoComments />*/}
-                                        <BottomSheet snapPoints={[0, '50%', '100%']} index={1}>
-                                            <Text>Hello</Text>
-                                        </BottomSheet>
+
                                         </View>
                                     </TouchableOpacity>
                                 </View>
@@ -126,14 +124,17 @@ const VideoScreen = () => {
                     </View>
 
                 {/*    recommended */}
-                {/*    <View style={tw`mt-10`}>*/}
-                {/*        /!*<VideoListItem />*!/*/}
-                {/*        <FlatList style={{marginBottom: 250}} data={videos} renderItem={({item}) => (*/}
-                {/*            <VideoListItem key={item.id} video={item} />*/}
-                {/*        )}/>*/}
-                {/*    </View>*/}
+                    <View style={tw`mt-10`}>
+                        {/*<VideoListItem />*/}
+                        <FlatList style={{marginBottom: 250}} data={videos} renderItem={({item}) => (
+                            <VideoListItem key={item.id} video={item} />
+                        )}/>
+                    </View>
                 </View>
             </ScrollView>
+            <BottomSheet snapPoints={[0, '50%', '100%']} index={1}>
+                <Text>Hello</Text>
+            </BottomSheet>
         </View>
     );
 };
