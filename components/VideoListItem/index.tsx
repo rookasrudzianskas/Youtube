@@ -47,15 +47,15 @@ const VideoListItem = (props: VideoListItemProps) => {
                                         <Text numberOfLines={2} style={tw`text-gray-100`}>Turning a Failed Dropshipping Store Profitable</Text>
                                         <View style={tw`flex flex-row mt-1`}>
                                             <Text style={tw`text-gray-400 mr-3`}>
-                                                Rokas Rudzianskas
+                                                {video?.user?.name}
                                             </Text>
 
                                             <Text style={tw`text-gray-400 mr-3`}>
-                                                778K Views
+                                                {video?.views} Views
                                             </Text>
 
                                             <Text style={tw`text-gray-400`}>
-                                                1 year ago
+                                                {video?.createdAt}
                                             </Text>
                                         </View>
                                     </View>
