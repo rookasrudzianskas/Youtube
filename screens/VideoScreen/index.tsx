@@ -5,6 +5,7 @@ import video from '../../assets/data/video.json';
 import {AntDesign} from "@expo/vector-icons";
 import videos from "../../assets/data/videos.json";
 import VideoListItem from "../../components/VideoListItem";
+import VideoPlayer from "../../components/VideoPlayer";
 
 const VideoScreen = () => {
 
@@ -23,7 +24,8 @@ const VideoScreen = () => {
     return (
         <View style={tw`mt-12`}>
             <View style={tw``}>
-                <Image source={{uri: video?.thumbnail}} style={{width: '100%', aspectRatio: 16/9}} />
+                {/*<Image source={{uri: video?.thumbnail}} style={{width: '100%', aspectRatio: 16/9}} />*/}
+                <VideoPlayer />
             </View>
 
             <ScrollView>
