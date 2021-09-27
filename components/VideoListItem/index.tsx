@@ -3,7 +3,7 @@ import {View, Image, Text, TouchableOpacity} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo} from "@expo/vector-icons";
 
-const VideoComponent = () => {
+const VideoListItem = () => {
     return (
         <View style={tw``}>
             <TouchableOpacity activeOpacity={0.8}>
@@ -58,4 +58,4 @@ const VideoComponent = () => {
     );
 };
 
-export default VideoComponent;
+export default VideoListItem;

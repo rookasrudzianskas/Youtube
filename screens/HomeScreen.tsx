@@ -3,7 +3,7 @@ import {View, Text} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import Header from "../components/Header";
 import SuggestedWatch from "../components/SuggestedWatch";
-import VideoComponent from "../components/VideoComponent";
+import VideoListItem from "../components/VideoListItem";
 
 const HomeScreen = () => {
     return (
@@ -15,7 +15,7 @@ const HomeScreen = () => {
             </View>
 
             <View style={tw``}>
-                <VideoComponent />
+                <VideoListItem />
             </View>
         </View>
     );
