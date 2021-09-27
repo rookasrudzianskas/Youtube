@@ -116,7 +116,7 @@ const VideoScreen = () => {
                                         {/*    <Text style={tw`text-gray-100 ml-2`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, repellat.</Text>*/}
                                         {/*</View>*/}
                                         {/*<VideoComments />*/}
-                                        <BottomSheet snapPoints={[0, '50%', '100%']} index={2}>
+                                        <BottomSheet snapPoints={[0, '50%', '100%']} index={1}>
                                             <Text>Hello</Text>
                                         </BottomSheet>
                                     </TouchableOpacity>
