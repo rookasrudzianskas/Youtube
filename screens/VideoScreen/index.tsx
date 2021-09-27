@@ -120,7 +120,7 @@ const VideoScreen = () => {
                 {/*    recommended */}
                     <View style={tw`mt-10`}>
                         {/*<VideoListItem />*/}
-                        <FlatList style={{marginBottom: 350}} data={videos} renderItem={({item}) => (
+                        <FlatList style={{marginBottom: 250}} data={videos} renderItem={({item}) => (
                             <VideoListItem key={item.id} video={item} />
                         )}/>
                     </View>
