@@ -22,6 +22,8 @@ interface VideoListItemProps {
 const VideoListItem = (props: VideoListItemProps) => {
     // console.log(props);
     const {video} = props;
+    const minutes = Math.floor(video.duration / 60);
+    const seconds = video.duration % 60;
     return (
         <View style={tw``}>
             <TouchableOpacity activeOpacity={0.8}>
@@ -29,7 +31,7 @@ const VideoListItem = (props: VideoListItemProps) => {
                     <View>
                         <Image source={{ uri: video?.thumbnail}} style={{ width: '100%', aspectRatio: 16/9 }} />
                         <View style={tw`bg-black opacity-75 rounded-md h-5 w-12 flex items-center justify-center absolute right-2 bottom-4`}>
-                            <Text style={tw`text-white`}>{video?.duration}</Text>
+                            <Text style={tw`text-white`}>{minutes}:{seconds}</Text>
                         </View>
                     </View>
 
