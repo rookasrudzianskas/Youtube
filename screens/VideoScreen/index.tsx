@@ -20,7 +20,7 @@ const VideoScreen = () => {
     const commentsSheetRef = useRef<BottomSheetModal>(null);
 
     const openComments = () => {
-        commentsSheetRef.current?.present();
+        commentsSheetRef.current?.expand();
         // console.warn("Rokas");
     }
 
@@ -135,7 +135,7 @@ const VideoScreen = () => {
                 </View>
             </ScrollView>
 
-            <BottomSheet ref={commentsSheetRef} snapPoints={[0, '100%']} index={1}>
+            <BottomSheet ref={commentsSheetRef} snapPoints={['100%']} index={-1}>
                 <Text>Hello</Text>
             </BottomSheet>
 
