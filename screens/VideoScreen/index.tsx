@@ -30,6 +30,7 @@ const VideoScreen = () => {
                 <VideoPlayer  thumbnailURI={video?.thumbnail} videoURI={video?.videoUrl}/>
             </View>
 
+            <View>
             <ScrollView>
                 <View style={tw`flex flex-col px-3`}>
                     <View style={tw`flex flex-row items-center mt-6`}>
@@ -132,9 +133,13 @@ const VideoScreen = () => {
                     </View>
                 </View>
             </ScrollView>
+
             <BottomSheet snapPoints={[0, '50%', '100%']} index={1}>
                 <Text>Hello</Text>
             </BottomSheet>
+
+            </View>
+
         </View>
     );
 };
