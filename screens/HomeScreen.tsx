@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text} from "react-native";
 import tw from "tailwind-react-native-classnames";
-import Header from "./Header";
-import SuggestedWatch from "./SuggestedWatch";
-import VideoComponent from "./VideoComponent";
+import Header from "../components/Header";
+import SuggestedWatch from "../components/SuggestedWatch";
+import VideoComponent from "../components/VideoComponent";
 
 const HomeScreen = () => {
     return (

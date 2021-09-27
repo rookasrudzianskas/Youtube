@@ -4,7 +4,7 @@ import {AntDesign, Entypo, FontAwesome, FontAwesome5, MaterialIcons} from "@expo
 import TabOneScreen from '../screens/TabOneScreen';
 import { BottomTabParamList } from '../types';
 import TabTwoScreen from "../screens/TabTwoScreen";
-import HomeScreen from '../components/HomeScreen';
+import HomeScreen from '../screens/HomeScreen';
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();

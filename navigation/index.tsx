@@ -10,7 +10,7 @@ import { RootStackParamList } from '../types';
 import TabOneScreen from "../screens/TabOneScreen";
 import LinkingConfiguration from "./LinkingConfiguration";
 import BottomTabNavigator from "./BottomTabNavigator";
-import HomeScreen from "../components/HomeScreen";
+import HomeScreen from "../screens/HomeScreen";
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
     return (
