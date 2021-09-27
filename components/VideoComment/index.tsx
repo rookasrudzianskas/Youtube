@@ -1,12 +1,10 @@
 import React from 'react'
 import {View, Text, Image} from 'react-native'
-// import { BottomSheetFlatList } from '@gorhom/bottom-sheet';
-import VideoComment from '../VideoComment';
 import comments from '../../assets/data/comments.json';
 import video from "../../assets/data/video.json";
 import tw from "tailwind-react-native-classnames";
 
-const VideoComments = () => {
+const VideoComment = () => {
     return (
         <View style={{backgroundColor: '#141414', flex: 1}}>
             {/*<BottomSheetFlatList*/}
@@ -20,4 +18,4 @@ const VideoComments = () => {
     )
 }
 
-export default VideoComments;
+export default VideoComment;
