@@ -7,7 +7,7 @@ import videos from "../../assets/data/videos.json";
 import VideoListItem from "../../components/VideoListItem";
 import VideoPlayer from "../../components/VideoPlayer";
 import VideoComments from "../../components/VideoComments";
-import BottomSheet from "@gorhom/bottom-sheet";
+import BottomSheet, {BottomSheetModal} from "@gorhom/bottom-sheet";
 
 const VideoScreen = () => {
 
@@ -17,10 +17,10 @@ const VideoScreen = () => {
     } else if (video.views > 1_000) {
         viewsString = (video.views / 1_000).toFixed(1) + 'K'
     }
-    // const commentsSheetRef = useRef<BottomSheetModal>(null);
+    const commentsSheetRef = useRef<BottomSheetModal>(null);
 
     const openComments = () => {
-        // commentsSheetRef.current?.present();
+        commentsSheetRef.current?.present();
     }
 
     return (
