@@ -36,37 +36,37 @@ const VideoScreen = () => {
                 <View style={tw`mt-3`}>
                     <ScrollView horizontal showsHorizontalScrollIndicator={false} >
                         <View style={tw`flex items-center`}>
-                            <AntDesign name="like1" size={37} color="lightgrey" />
+                            <AntDesign name="like1" size={35} color="lightgrey" />
                             <Text style={tw`text-gray-200 mt-1`}>{video.likes}</Text>
                         </View>
 
                         <View style={tw`flex items-center mx-3`}>
-                            <AntDesign name="dislike2" size={37} color="lightgrey" />
+                            <AntDesign name="dislike2" size={35} color="lightgrey" />
                             <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
                         </View>
 
                         <View style={tw`flex items-center mx-3`}>
-                            <AntDesign name="export" size={37} color="lightgrey" />
+                            <AntDesign name="export" size={35} color="lightgrey" />
                             <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
                         </View>
 
                         <View style={tw`flex items-center mx-3`}>
-                            <AntDesign name="download" size={37} color="lightgrey" />
+                            <AntDesign name="download" size={35} color="lightgrey" />
                             <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
                         </View>
 
                         <View style={tw`flex items-center mx-3`}>
-                            <AntDesign name="download" size={37} color="lightgrey" />
+                            <AntDesign name="download" size={35} color="lightgrey" />
                             <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
                         </View>
 
                         <View style={tw`flex items-center mx-3`}>
-                            <AntDesign name="download" size={37} color="lightgrey" />
+                            <AntDesign name="download" size={35} color="lightgrey" />
                             <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
                         </View>
 
                         <View style={tw`flex items-center mx-3`}>
-                            <AntDesign name="download" size={37} color="lightgrey" />
+                            <AntDesign name="download" size={35} color="lightgrey" />
                             <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
                         </View>
                     </ScrollView>
