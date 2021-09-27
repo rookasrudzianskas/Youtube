@@ -21,6 +21,7 @@ const VideoScreen = () => {
 
     const openComments = () => {
         commentsSheetRef.current?.present();
+        // console.warn("Rokas");
     }
 
     return (
