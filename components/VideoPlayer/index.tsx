@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
 import {View, Text} from "react-native";
 import {Video} from "expo-av";
+import {loadAsync} from "expo-font";
 
 interface VideoPlayerProps {
     videoURI: string,
@@ -10,11 +11,6 @@ interface VideoPlayerProps {
 const VideoPlayer = (props: VideoPlayerProps) => {
     const {videoURI, thumbnailURI} = props;
 
-    const videoRef = useRef<Video>(null);
-    const onRefAssign = (videoElement) => {
-        // videoRef.current = videoElement;
-        console.warn("WIDEO IS MOUNTED");
-    }
 
     return (
         <View>
@@ -27,7 +23,6 @@ const VideoPlayer = (props: VideoPlayerProps) => {
                 posterStyle={{
                     resizeMode: 'cover',
                 }}
-                ref={onRefAssign}
                 usePoster={false}
                 useNativeControls
                 resizeMode="contain"
