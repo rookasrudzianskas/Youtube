@@ -44,7 +44,7 @@ const VideoListItem = (props: VideoListItemProps) => {
                             <View style={tw`flex flex-row items-center justify-center`}>
                                 <View style={tw`flex mr-10`}>
                                     <View style={tw`ml-6 flex flex-col justify-center mt-3`}>
-                                        <Text numberOfLines={2} style={tw`text-gray-100`}>Turning a Failed Dropshipping Store Profitable</Text>
+                                        <Text numberOfLines={2} style={tw`text-gray-100`}>{video?.title}</Text>
                                         <View style={tw`flex flex-row mt-1`}>
                                             <Text style={tw`text-gray-400 mr-3`}>
                                                 {video?.user?.name}
