@@ -7,12 +7,11 @@ import tw from "tailwind-react-native-classnames";
 
 const VideoComments = () => {
     return (
-        <View style={{backgroundColor: '#141414', flex: 1}}>
-            {/*<BottomSheetFlatList*/}
-            {/*    data={comments}*/}
-            {/*    renderItem={({item}) => <VideoComment comment={item} />}*/}
-            {/*/>*/}
-            <Text style={tw`text-white text-lg`}>Hello</Text>
+        <View style={tw`bg-gray-800`}>
+            <BottomSheetFlatList
+                data={comments}
+                renderItem={({item}) => <VideoComment comment={item} />}
+            />
         </View>
     )
 }

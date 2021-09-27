@@ -6,8 +6,8 @@ import {AntDesign} from "@expo/vector-icons";
 import videos from "../../assets/data/videos.json";
 import VideoListItem from "../../components/VideoListItem";
 import VideoPlayer from "../../components/VideoPlayer";
-import VideoComments from "../../components/VideoComments";
 import BottomSheet, {BottomSheetModal} from "@gorhom/bottom-sheet";
+import VideoComments from "../../components/VideoComments";
 
 const VideoScreen = () => {
 
@@ -114,7 +114,7 @@ const VideoScreen = () => {
                                     <TouchableOpacity  onPress={openComments} activeOpacity={0.8}>
                                         <View style={tw`flex flex-row items-center my-2`}>
                                     {/*<VideoComment comment={comments[0]}/>*/}
-                     
+
                                         {/*<VideoComments />*/}
 
                                         </View>
@@ -135,8 +135,8 @@ const VideoScreen = () => {
             </ScrollView>
 
             <BottomSheet ref={commentsSheetRef} snapPoints={[0, '100%']} index={-1}>
-                <View style={tw`flex flex-1`}>
-                    <Text>Hello</Text>
+                <View style={tw`flex bg-gray-800 flex-1`}>
+                    <VideoComments />
                 </View>
             </BottomSheet>
 
