@@ -72,6 +72,22 @@ const VideoScreen = () => {
                     </ScrollView>
                 </View>
 
+                <View style={tw`mt-3 border-t-2 border-gray-600  border-b-2 border-gray-600`}>
+                    <View style={tw`flex flex-row items-center my-2`}>
+                        <View style={tw``}>
+                            <Image source={{uri: video?.user?.image}} style={tw`w-10 h-10 rounded-full`} />
+                        </View>
+                        <View style={tw`flex flex-col ml-2 justify-center flex-1`}>
+                            <Text style={tw`text-gray-100 text-lg`}>{video.user.name}</Text>
+                            <Text style={tw`text-gray-400`}>{video?.user?.subscribers} subscribers</Text>
+                        </View>
+
+                        <View style={tw`flex `}>
+                            <Text style={tw`text-lg text-red-500`}>SUBSCRIBE</Text>
+                        </View>
+                    </View>
+                </View>
+
             </View>
         </View>
     );
