@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Image, Text, TouchableOpacity} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo} from "@expo/vector-icons";
+import {useNavigation} from "@react-navigation/native";
 
 interface VideoListItemProps {
     video: {
@@ -32,9 +33,12 @@ const VideoListItem = (props: VideoListItemProps) => {
         viewsString = (video.views / 1_000).toFixed() + 'K'
     }
 
+    const navigation = useNavigation();
+
     return (
         <View style={tw``}>
-            <TouchableOpacity activeOpacity={0.8}>
+    {/*// @ts-ignore*/}
+            <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('VideoScreen')}>
                 <View style={tw`mb-10`}>
                     <View>
                         <Image source={{ uri: video?.thumbnail}} style={{ width: '100%', aspectRatio: 16/9 }} />

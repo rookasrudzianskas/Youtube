@@ -11,6 +11,7 @@ import TabOneScreen from "../screens/TabOneScreen";
 import LinkingConfiguration from "./LinkingConfiguration";
 import BottomTabNavigator from "./BottomTabNavigator";
 import HomeScreen from "../screens/HomeScreen";
+import VideoScreen from "../screens/VideoScreen";
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
     return (
@@ -33,6 +34,8 @@ function RootNavigator() {
             <Stack.Screen name="Root" component={BottomTabNavigator} />
     {/*// @ts-ignore*/}
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
+    {/*// @ts-ignore*/}
+            <Stack.Screen name="VideoScreen" component={VideoScreen} />
     {/*// @ts-ignore*/}
             <Stack.Screen name="WelcomeScreen" component={TabOneScreen} />
             <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
