@@ -1,8 +1,10 @@
 import React, {useRef} from 'react';
-import {View, Text, Image, ScrollView, TouchableOpacity} from "react-native";
+import {View, Text, Image, ScrollView, TouchableOpacity, Pressable, FlatList} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import video from '../../assets/data/video.json';
 import {AntDesign} from "@expo/vector-icons";
+import videos from "../../assets/data/videos.json";
+import VideoListItem from "../../components/VideoListItem";
 
 const VideoScreen = () => {
 
@@ -96,19 +98,32 @@ const VideoScreen = () => {
 
 
                     <View style={tw`mt-4`}>
-                        <TouchableOpacity onPress={openComments} activeOpacity={0.8}>
-                            <View style={tw`my-4`}>
+                        <Pressable onPress={openComments}>
+                            <View style={tw``}>
                                 <View style={tw`flex flex-row`}>
                                     <Text style={tw`text-gray-100 text-lg`}>Comments</Text>
                                     <Text style={tw`text-gray-400 text-lg ml-3`}>300</Text>
                                 </View>
                                 <View style={tw``}>
                                     {/*<VideoComment comment={comments[0]}/>*/}
+                                    <TouchableOpacity activeOpacity={0.8}>
+                                        <View style={tw`flex flex-row items-center my-2`}>
+                                            <Image source={{uri: video?.user?.image}} style={tw`w-10 h-10 rounded-full`} />
+                                            <Text style={tw`text-gray-100 ml-2`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, repellat.</Text>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                             </View>
-                        </TouchableOpacity>
+                        </Pressable>
                     </View>
 
+                {/*    recommended */}
+                    <View style={tw`mt-10`}>
+                        {/*<VideoListItem />*/}
+                        <FlatList style={{marginBottom: 350}} data={videos} renderItem={({item}) => (
+                            <VideoListItem key={item.id} video={item} />
+                        )}/>
+                    </View>
                 </View>
             </ScrollView>
         </View>
