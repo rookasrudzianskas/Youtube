@@ -8,10 +8,12 @@ interface VideoPlayerProps {
 }
 
 const VideoPlayer = (props: VideoPlayerProps) => {
+    const {videoURI, thumbnailURI} = props;
+
     return (
         <View>
             <Video
-                source={{ uri: 'http://foo/bar.mp3' }}
+                source={{ uri: 'https://www.youtube.com/embed/cwhC19Fa_84' }}
                 style={{width: '100%', aspectRatio: 16/9}}
                 posterSource={{
                     uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/thumbnails/thumbnail1.jpeg',
@@ -19,7 +21,7 @@ const VideoPlayer = (props: VideoPlayerProps) => {
                 posterStyle={{
                     resizeMode: 'cover',
                 }}
-                usePoster={true}
+                usePoster={false}
                 useNativeControls
                 resizeMode="contain"
             />
