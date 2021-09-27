@@ -96,11 +96,15 @@ const VideoScreen = () => {
 
                 <View style={tw`mt-4`}>
                     <TouchableOpacity onPress={openComments} activeOpacity={0.8}>
-                        <View style={tw`flex flex-row`}>
-                            <Text style={tw`text-gray-100 text-lg`}>Comments</Text>
-                            <Text style={tw`text-gray-400 text-lg ml-3`}>300</Text>
+                        <View style={tw``}>
+                            <View style={tw`flex flex-row`}>
+                                <Text style={tw`text-gray-100 text-lg`}>Comments</Text>
+                                <Text style={tw`text-gray-400 text-lg ml-3`}>300</Text>
+                            </View>
+                            <View style={tw``}>
+                                {/*<VideoComment comment={comments[0]}/>*/}
+                            </View>
                         </View>
-                        {/*<VideoComment comment={comments[0]}/>*/}
                     </TouchableOpacity>
                 </View>
 
