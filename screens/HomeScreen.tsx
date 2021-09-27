@@ -19,7 +19,7 @@ const HomeScreen = () => {
             <View style={tw``}>
                 {/*<VideoListItem />*/}
                 <FlatList style={{marginBottom: 350}} data={videos} renderItem={({item}) => (
-                    <VideoListItem key={item.id} item={item} />
+                    <VideoListItem key={item.id} video={item} />
                 )}/>
             </View>
         </View>
