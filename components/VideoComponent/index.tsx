@@ -13,10 +13,31 @@ const VideoComponent = () => {
                     </View>
                 </View>
 
-                <View style={tw``}>
+                <View style={tw`flex flex-row items-center mt-3`}>
                 {/*    avatar   */}
+                    <View style={tw`w-10 h-10`}>
+                        <Image style={tw`w-14 h-14 rounded-full`} source={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}} />
+                    </View>
 
                 {/*    middle container */}
+                    <View style={tw`flex flex-row items-center justify-center`}>
+                        <View style={tw`ml-6 flex flex-col justify-center mt-3`}>
+                            <Text numberOfLines={2} style={tw`text-gray-100`}>Turning a Failed Dropshipping Store Profitable (Fully revealed)</Text>
+                            <View style={tw`flex flex-row mt-1`}>
+                                <Text style={tw`text-gray-400 mr-3`}>
+                                    Rokas Rudzianskas
+                                </Text>
+
+                                <Text style={tw`text-gray-400 mr-3`}>
+                                    778K Views
+                                </Text>
+
+                                <Text style={tw`text-gray-400`}>
+                                    1 year ago
+                                </Text>
+                            </View>
+                        </View>
+                    </View>
 
                 {/*    title row    */}
                 </View>
