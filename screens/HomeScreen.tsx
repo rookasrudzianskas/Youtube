@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import SuggestedWatch from "../components/SuggestedWatch";
 // import VideoListItem from "../components/VideoListItem";
 import videos from '../assets/data/videos.json';
+import VideoListItem from "../components/VideoListItem";
 
 const HomeScreen = () => {
     return (
@@ -15,11 +16,12 @@ const HomeScreen = () => {
                 <SuggestedWatch />
             </View>
 
-            {/*<View style={tw``}>*/}
-            {/*    <FlatList  data={videos} renderItem={({item}) => (*/}
-            {/*        <VideoListItem key={item.id} item={item} />*/}
-            {/*    )}/>*/}
-            {/*</View>*/}
+            <View style={tw``}>
+                {/*<VideoListItem />*/}
+                <FlatList style={{marginBottom: 350}} data={videos} renderItem={({item}) => (
+                    <VideoListItem key={item.id} item={item} />
+                )}/>
+            </View>
         </View>
     );
 };
