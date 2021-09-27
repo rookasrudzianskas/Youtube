@@ -14,10 +14,10 @@ const VideoScreen = () => {
     } else if (video.views > 1_000) {
         viewsString = (video.views / 1_000).toFixed(1) + 'K'
     }
-    const commentsSheetRef = useRef<BottomSheetModal>(null);
+    // const commentsSheetRef = useRef<BottomSheetModal>(null);
 
     const openComments = () => {
-        commentsSheetRef.current?.present();
+        // commentsSheetRef.current?.present();
     }
 
     return (
