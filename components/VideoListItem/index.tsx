@@ -24,6 +24,14 @@ const VideoListItem = (props: VideoListItemProps) => {
     const {video} = props;
     const minutes = Math.floor(video.duration / 60);
     const seconds = video.duration % 60;
+
+    let viewsString = video.views.toString();
+    if (video.views > 1_000_000){
+        viewsString = (video.views / 1_000_000).toFixed(1) + 'M'
+    } else if (video.views > 1_000) {
+        viewsString = (video.views / 1_000).toFixed() + 'K'
+    }
+
     return (
         <View style={tw``}>
             <TouchableOpacity activeOpacity={0.8}>
@@ -53,7 +61,7 @@ const VideoListItem = (props: VideoListItemProps) => {
                                             </Text>
 
                                             <Text style={tw`text-gray-400 mr-3`}>
-                                                {video?.views} Views
+                                                {viewsString} Views
                                             </Text>
 
                                             <Text style={tw`text-gray-400`}>
