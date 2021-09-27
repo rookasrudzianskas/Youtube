@@ -111,11 +111,10 @@ const VideoScreen = () => {
                                     <Text style={tw`text-gray-400 text-lg ml-3`}>300</Text>
                                 </View>
                                 <View style={tw``}>
-                                    {/*<VideoComment comment={comments[0]}/>*/}
                                     <TouchableOpacity  onPress={openComments} activeOpacity={0.8}>
                                         <View style={tw`flex flex-row items-center my-2`}>
-                                            <Image source={{uri: video?.user?.image}} style={tw`w-10 h-10 rounded-full`} />
-                                            <Text style={tw`text-gray-100 ml-2`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, repellat.</Text>
+                                    {/*<VideoComment comment={comments[0]}/>*/}
+                     
                                         {/*<VideoComments />*/}
 
                                         </View>
@@ -136,7 +135,7 @@ const VideoScreen = () => {
             </ScrollView>
 
             <BottomSheet ref={commentsSheetRef} snapPoints={[0, '100%']} index={-1}>
-                <View style={tw`bg-gray-900 flex flex-1`}>
+                <View style={tw`flex flex-1`}>
                     <Text>Hello</Text>
                 </View>
             </BottomSheet>
