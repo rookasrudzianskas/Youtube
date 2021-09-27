@@ -9,22 +9,22 @@ const VideoListItem = () => {
             <TouchableOpacity activeOpacity={0.8}>
                 <View style={tw`mb-10`}>
                     <View>
-                    <Image source={{ uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/thumbnails/thumbnail3.jpeg'}} style={{ width: '100%', aspectRatio: 16/9 }} />
+                        <Image source={{ uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/thumbnails/thumbnail3.jpeg'}} style={{ width: '100%', aspectRatio: 16/9 }} />
                         <View style={tw`bg-black opacity-75 rounded-md h-5 w-12 flex items-center justify-center absolute right-2 bottom-4`}>
                             <Text style={tw`text-white`}>14:53</Text>
                         </View>
                     </View>
 
-                        <View style={tw`mt-3 pl-2`}>
+                    <View style={tw`mt-3 pl-2`}>
                         {/*    avatar   */}
-                                <View style={tw`flex flex-row items-center `}>
-                                <View style={tw`w-10 h-10`}>
-                                    <Image style={tw`w-14 h-14 rounded-full`} source={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}} />
-                                </View>
+                        <View style={tw`flex flex-row items-center `}>
+                            <View style={tw`w-10 h-10`}>
+                                <Image style={tw`w-14 h-14 rounded-full`} source={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}} />
+                            </View>
 
                             {/*    middle container */}
-                                <View style={tw`flex flex-row items-center justify-center`}>
-                                    <View style={tw`flex mr-10`}>
+                            <View style={tw`flex flex-row items-center justify-center`}>
+                                <View style={tw`flex mr-10`}>
                                     <View style={tw`ml-6 flex flex-col justify-center mt-3`}>
                                         <Text numberOfLines={2} style={tw`text-gray-100`}>Turning a Failed Dropshipping Store Profitable</Text>
                                         <View style={tw`flex flex-row mt-1`}>
@@ -42,18 +42,18 @@ const VideoListItem = () => {
                                         </View>
                                     </View>
                                 </View>
-                                </View>
-                                    <View>
-                                        <View style={tw`-ml-2`}>
-                                            <Entypo name="dots-three-vertical" size={18} color="white" />
-                                        </View>
-                                    </View>
                             </View>
+                            <View>
+                                <View style={tw`-ml-2`}>
+                                    <Entypo name="dots-three-vertical" size={18} color="white" />
+                                </View>
+                            </View>
+                        </View>
 
                         {/*    title row    */}
-                        </View>
+                    </View>
                 </View>
-                </TouchableOpacity>
+            </TouchableOpacity>
         </View>
     );
 };
