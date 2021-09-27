@@ -45,7 +45,7 @@ const VideoComponent = () => {
                                 </View>
                                     <View>
                                         <View style={tw`-ml-2`}>
-                                            <Entypo name="dots-three-vertical" size={24} color="white" />
+                                            <Entypo name="dots-three-vertical" size={18} color="white" />
                                         </View>
                                     </View>
                             </View>
