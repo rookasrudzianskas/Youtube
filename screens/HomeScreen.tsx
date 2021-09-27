@@ -16,7 +16,7 @@ const HomeScreen = () => {
             </View>
 
             <View style={tw``}>
-                <FlatList showsVerticalScrollIndicator={false} data={videos} renderItem={({item}) => (
+                <FlatList style={{marginBottom: 330}} showsVerticalScrollIndicator={false} data={videos} renderItem={({item}) => (
                     <VideoListItem key={item.id} item={item} />
                 )}/>
             </View>
