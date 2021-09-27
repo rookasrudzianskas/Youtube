@@ -3,15 +3,33 @@ import {View, Image, Text, TouchableOpacity} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo} from "@expo/vector-icons";
 
-const VideoListItem = () => {
+interface VideoListItemProps {
+    video: {
+        id: string,
+        createdAt: string,
+        title: string,
+        thumbnail: string,
+        videoUrl: string,
+        duration: number,
+        views: number,
+        user: {
+            name: string,
+            image?: string,
+        },
+    }
+}
+
+const VideoListItem = (props: VideoListItemProps) => {
+    // console.log(props);
+    const {video} = props;
     return (
         <View style={tw``}>
             <TouchableOpacity activeOpacity={0.8}>
                 <View style={tw`mb-10`}>
                     <View>
-                        <Image source={{ uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/thumbnails/thumbnail3.jpeg'}} style={{ width: '100%', aspectRatio: 16/9 }} />
+                        <Image source={{ uri: video?.thumbnail}} style={{ width: '100%', aspectRatio: 16/9 }} />
                         <View style={tw`bg-black opacity-75 rounded-md h-5 w-12 flex items-center justify-center absolute right-2 bottom-4`}>
-                            <Text style={tw`text-white`}>14:53</Text>
+                            <Text style={tw`text-white`}>{video?.duration}</Text>
                         </View>
                     </View>
 
@@ -19,7 +37,7 @@ const VideoListItem = () => {
                         {/*    avatar   */}
                         <View style={tw`flex flex-row items-center `}>
                             <View style={tw`w-10 h-10`}>
-                                <Image style={tw`w-14 h-14 rounded-full`} source={{uri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg'}} />
+                                <Image style={tw`w-14 h-14 rounded-full`} source={{uri: video?.user?.image}} />
                             </View>
 
                             {/*    middle container */}
