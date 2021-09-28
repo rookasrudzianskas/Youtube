@@ -6,9 +6,10 @@ import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 import VideoScreen from "./screens/VideoScreen";
-
+//@ts-ignore
 import Amplify from 'aws-amplify';
 import config from './src/aws-exports';
+import { withAuthenticator } from 'aws-amplify-react-native';
 
 Amplify.configure({
   ...config,
@@ -16,7 +17,7 @@ Amplify.configure({
     disabled: true,
   },
 });
-export default function App() {
+const App = () => {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
@@ -31,3 +32,5 @@ export default function App() {
     );
   }
 }
+
+export default withAuthenticator(App);
