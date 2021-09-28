@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import Header from "../components/Header";
@@ -10,6 +10,10 @@ import VideoListItem from "../components/VideoListItem";
 const HomeScreen = () => {
 
     const [videos, setVideos] = useState([]);
+
+    useEffect(() => {
+
+    }, []);
 
     return (
         <View style={tw`flex`}>
