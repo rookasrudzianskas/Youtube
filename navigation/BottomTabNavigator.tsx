@@ -75,5 +75,3 @@ export default function BottomTabNavigator() {
         </BottomTab.Navigator>
     );
 }
-
-// done
