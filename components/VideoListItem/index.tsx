@@ -37,7 +37,7 @@ const VideoListItem = (props: VideoListItemProps) => {
 
     const openVideoPage = () => {
        // @ts-ignore
-        navigation.navigate('VideoScreen');
+        navigation.navigate('VideoScreen', {id: video.id});
     }
 
     return (
