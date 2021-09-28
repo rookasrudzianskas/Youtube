@@ -137,9 +137,8 @@ const VideoScreen = () => {
             </ScrollView>
 
             <BottomSheet
-                style={{
-                    backgroundColor: 'red',
-                }}
+                style={tw`bg-gray-800`}
+                backgroundComponent={() => <View style={{backgroundColor: 'blue'}} />}
                 ref={commentsSheetRef} snapPoints={[0, '100%']} index={-1}>
                 <View style={tw`flex bg-gray-800 flex-1`}>
                     <VideoComments />
