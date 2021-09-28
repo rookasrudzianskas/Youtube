@@ -35,10 +35,15 @@ const VideoListItem = (props: VideoListItemProps) => {
 
     const navigation = useNavigation();
 
+    const openVideoPage = () => {
+       // @ts-ignore
+        navigation.navigate('VideoScreen');
+    }
+
     return (
         <View style={tw``}>
     {/*// @ts-ignore*/}
-            <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('VideoScreen')}>
+            <TouchableOpacity activeOpacity={0.8} onPress={openVideoPage}>
                 <View style={tw`mb-10`}>
                     <View>
                         <Image source={{ uri: video?.thumbnail}} style={{ width: '100%', aspectRatio: 16/9 }} />
