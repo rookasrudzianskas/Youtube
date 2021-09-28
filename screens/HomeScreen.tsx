@@ -12,6 +12,7 @@ const HomeScreen = () => {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
+        // fetch videos
 
     }, []);
 
