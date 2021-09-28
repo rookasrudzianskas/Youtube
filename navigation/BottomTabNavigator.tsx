@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
-import {AntDesign, Entypo, FontAwesome, FontAwesome5, MaterialIcons} from "@expo/vector-icons";
+import {AntDesign, Entypo, FontAwesome, FontAwesome5, Foundation, Ionicons, MaterialIcons} from "@expo/vector-icons";
 import TabOneScreen from '../screens/TabOneScreen';
 import { BottomTabParamList } from '../types';
 import TabTwoScreen from "../screens/TabTwoScreen";
@@ -24,29 +24,50 @@ export default function BottomTabNavigator() {
         >
             <BottomTab.Screen
     // @ts-ignore
-                name="HomeScreen"
+                name="Home"
                 component={HomeScreen}
                 options={{
-                    tabBarIcon: ({ color }) => <Entypo name="home" size={24} color={color} />,
-                }}
-
-            />
-
-            <BottomTab.Screen
-                name="Home"
-                component={TabOneScreen}
-                options={{
-                    tabBarIcon: ({ color }) => <Entypo name="home" size={24} color={color} />,
+                    tabBarIcon: ({ color }) =><Foundation name="home" size={24} color={color} />,
                 }}
 
             />
 
             <BottomTab.Screen
     // @ts-ignore
-                name="Second"
+                name="Explore"
+                component={TabOneScreen}
+                options={{
+                    tabBarIcon: ({ color }) => <Ionicons name="compass-outline" size={24} color={color} />,
+                }}
+
+            />
+
+            <BottomTab.Screen
+    // @ts-ignore
+                name="New"
                 component={TabTwoScreen}
                 options={{
-                    tabBarIcon: ({ color }) => <Entypo name="home" size={24} color={color} />,
+                    tabBarIcon: ({ color }) => <AntDesign name="pluscircleo" size={24} color={color} />,
+                }}
+
+            />
+
+            <BottomTab.Screen
+                // @ts-ignore
+                name="Subscriptions"
+                component={TabTwoScreen}
+                options={{
+                    tabBarIcon: ({ color }) => <MaterialIcons name="subscriptions" size={24} color={color} />,
+                }}
+
+            />
+
+            <BottomTab.Screen
+                // @ts-ignore
+                name="Library"
+                component={TabTwoScreen}
+                options={{
+                    tabBarIcon: ({ color }) => <MaterialIcons name="video-collection" size={24} color={color} />,
                 }}
 
             />
