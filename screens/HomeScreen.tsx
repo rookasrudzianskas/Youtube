@@ -1,3 +1,4 @@
+import { DataStore } from 'aws-amplify';
 import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList} from "react-native";
 import tw from "tailwind-react-native-classnames";
@@ -6,6 +7,7 @@ import SuggestedWatch from "../components/SuggestedWatch";
 // import VideoListItem from "../components/VideoListItem";
 // import videos from '../assets/data/videos.json';
 import VideoListItem from "../components/VideoListItem";
+import { Video } from '../src/models';
 
 const HomeScreen = () => {
 
@@ -13,7 +15,12 @@ const HomeScreen = () => {
 
     useEffect(() => {
         // fetch videos
+        const fetchVideos = async () => {
+            const response = await DataStore.query(Video);
+            console.log(response);
+        }
 
+        fetchVideos();
     }, []);
 
     return (
