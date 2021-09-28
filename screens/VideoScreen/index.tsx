@@ -20,7 +20,7 @@ const VideoScreen = () => {
     const commentsSheetRef = useRef<BottomSheetModal>(null);
 
     const openComments = () => {
-        commentsSheetRef.current?.expand();
+        commentsSheetRef.current?.present();
         // console.warn("Rokas");
     }
 
@@ -134,7 +134,7 @@ const VideoScreen = () => {
                 </View>
             </ScrollView>
 
-            <BottomSheet
+            <BottomSheetModal
                 style={{
                     backgroundColor: 'black',
                 }}
@@ -142,7 +142,7 @@ const VideoScreen = () => {
                 <View style={tw`flex bg-gray-800 flex-1`}>
                     <VideoComments />
                 </View>
-            </BottomSheet>
+            </BottomSheetModal>
 
             </View>
         </View>
