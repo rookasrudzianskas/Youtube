@@ -25,8 +25,9 @@ const HomeScreen = () => {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-        // fetch videos
         const fetchVideos = async () => {
+            // @ts-ignore
+        // fetch videos
             const response = await DataStore.query(models.Video);
             console.log(response);
         }
