@@ -7,6 +7,15 @@ import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 import VideoScreen from "./screens/VideoScreen";
 
+import Amplify from 'aws-amplify';
+import config from './src/aws-exports';
+
+Amplify.configure({
+  ...config,
+  Analytics: {
+    disabled: true,
+  },
+});
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
