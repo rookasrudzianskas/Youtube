@@ -9,6 +9,14 @@ import SuggestedWatch from "../components/SuggestedWatch";
 import VideoListItem from "../components/VideoListItem";
 import { Video } from '../src/models';
 
+import { initSchema } from "@aws-amplify/datastore";
+import { schema } from "../src/models/schema";
+
+let models;
+if (typeof window !== "undefined") {
+    models = initSchema(schema);
+}
+
 const HomeScreen = () => {
 
     const [videos, setVideos] = useState([]);
