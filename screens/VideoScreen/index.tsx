@@ -8,6 +8,8 @@ import VideoListItem from "../../components/VideoListItem";
 import VideoPlayer from "../../components/VideoPlayer";
 import BottomSheet, {BottomSheetModal} from "@gorhom/bottom-sheet";
 import VideoComments from "../../components/VideoComments";
+import VideoComment from "../../components/VideoComment";
+import comments from '../../assets/data/comments.json';
 
 const VideoScreen = () => {
 
@@ -114,8 +116,8 @@ const VideoScreen = () => {
                                     <TouchableOpacity  onPress={openComments} activeOpacity={0.8}>
                                         <View style={tw`flex flex-row items-center my-2`}>
                                     {/*<VideoComment comment={comments[0]}/>*/}
-
-                                        {/*<VideoComments />*/}
+                                            <Text style={tw`text-white`}>Open the comments</Text>
+                                            {/*<VideoComments />*/}
 
                                         </View>
                                     </TouchableOpacity>
