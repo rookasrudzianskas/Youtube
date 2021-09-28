@@ -9,6 +9,7 @@ import VideoScreen from "./screens/VideoScreen";
 //@ts-ignore
 import Amplify from 'aws-amplify';
 import config from './src/aws-exports';
+//@ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native';
 
 Amplify.configure({
