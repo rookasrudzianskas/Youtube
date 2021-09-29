@@ -20,6 +20,7 @@ import BottomSheet, {BottomSheetModal} from "@gorhom/bottom-sheet";
 import VideoComments from "../../components/VideoComments";
 import VideoComment from "../../components/VideoComment";
 import comments from '../../assets/data/comments.json';
+import {useRoute} from "@react-navigation/native";
 const VideoScreen = () => {
 
     //@ts-ignore
@@ -53,9 +54,13 @@ const VideoScreen = () => {
         )
     }
 
+    const route = useRoute();
+    // @ts-ignore
+    const videoId = route?.params?.id;
+
     useEffect(() => {
 
-    }, []);
+    }, [videoId]);
 
     return (
         <View style={tw`mt-12`}>
