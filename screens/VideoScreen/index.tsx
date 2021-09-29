@@ -80,6 +80,7 @@ const VideoScreen = () => {
     }, [video]);
 
 
+    // @ts-ignore
     return (
         <View style={tw`mt-12`}>
             <View style={tw``}>
@@ -197,7 +198,7 @@ const VideoScreen = () => {
                 backgroundComponent={() => <View style={{backgroundColor: 'blue'}} />}
                 ref={commentsSheetRef} snapPoints={[0, '100%']} index={-1}>
                 <View style={tw`flex bg-gray-800 flex-1`}>
-                    {!!comments.length && <VideoComments comments={comments}/>}
+                    {!!comments.length && <VideoComments videoID={video.id} comments={comments}/>}
                 </View>
             </BottomSheet>
 

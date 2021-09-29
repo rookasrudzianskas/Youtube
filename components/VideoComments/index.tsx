@@ -6,8 +6,13 @@ import tw from "tailwind-react-native-classnames";
 
 import {Comment} from '../../src/models';
 import { DataStore } from 'aws-amplify';
+
+interface VideoCommentsProps {
+    comments: Comment[],
+    videoID: string,
+}
 // @ts-ignore
-const VideoComments = ({comments}) => {
+const VideoComments = ({comments, videoID}: VideoCommentsProps) => {
 
     const [newComment, setNewComment] = useState('');
     const sendComment = async () => {
@@ -16,6 +21,7 @@ const VideoComments = ({comments}) => {
             likes: 0,
             dislikes: 0,
             replies: 0,
+            videoID: videoID,
         }));
 
         setNewComment('');
