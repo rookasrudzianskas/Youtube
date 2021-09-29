@@ -35,6 +35,7 @@ const VideoScreen = () => {
 
     // @ts-ignore
     const [video, setVideo] = useState<Video | undefined>();
+    const [comments, setComments] = useState<Comment[]>([]);
 
     if(video === null) {
         return (
@@ -66,6 +67,10 @@ const VideoScreen = () => {
     useEffect(() => {
         DataStore.query(Video, videoId).then(setVideo);
     }, [videoId]);
+
+    useEffect(() => {
+
+    }, [video]);
 
 
     return (
