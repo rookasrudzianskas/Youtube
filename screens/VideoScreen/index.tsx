@@ -185,6 +185,7 @@ const VideoScreen = () => {
                     <View style={tw`mt-10`}>
                         {/*<VideoListItem />*/}
                         <FlatList style={{marginBottom: 250}} data={videos} renderItem={({item}) => (
+                            //@ts-ignore
                             <VideoListItem key={item.id} video={item} />
                         )}/>
                     </View>
