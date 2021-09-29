@@ -21,6 +21,9 @@ import VideoComments from "../../components/VideoComments";
 import VideoComment from "../../components/VideoComment";
 import comments from '../../assets/data/comments.json';
 import {useRoute} from "@react-navigation/native";
+import { DataStore } from 'aws-amplify';
+import {Video} from '../../src/models';
+
 const VideoScreen = () => {
 
     //@ts-ignore
@@ -42,7 +45,7 @@ const VideoScreen = () => {
     }
 
     // @ts-ignore
-    const [video, setVideo] = useState<Video | null>();
+    const [video, setVideo] = useState<Video | undefined>();
 
     if(video === null) {
         return (
@@ -59,7 +62,7 @@ const VideoScreen = () => {
     const videoId = route?.params?.id;
 
     useEffect(() => {
-
+        DataStore.query(Video, videoId).then(setVideo);
     }, [videoId]);
 
     return (
@@ -127,11 +130,11 @@ const VideoScreen = () => {
                     <View style={tw`mt-3 border-t-2 border-gray-600  border-b-2 border-gray-600`}>
                         <View style={tw`flex flex-row items-center my-2`}>
                             <View style={tw``}>
-                                <Image source={{uri: video?.user?.image}} style={tw`w-10 h-10 rounded-full`} />
+                                <Image source={{uri: video?.User?.image}} style={tw`w-10 h-10 rounded-full`} />
                             </View>
                             <View style={tw`flex flex-col ml-2 justify-center flex-1`}>
-                                <Text style={tw`text-gray-100 text-lg`}>{video?.user.name}</Text>
-                                <Text style={tw`text-gray-400`}>{video?.user?.subscribers} subscribers</Text>
+                                <Text style={tw`text-gray-100 text-lg`}>{video?.User?.name}</Text>
+                                <Text style={tw`text-gray-400`}>{video?.User?.subscribers} subscribers</Text>
                             </View>
 
                             <View style={tw`flex `}>
