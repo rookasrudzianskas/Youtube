@@ -1,5 +1,15 @@
-import React, {useRef} from 'react';
-import {View, Text, Image, ScrollView, TouchableOpacity, Pressable, FlatList, SafeAreaView} from "react-native";
+import React, {useRef, useState} from 'react';
+import {
+    View,
+    Text,
+    Image,
+    ScrollView,
+    TouchableOpacity,
+    Pressable,
+    FlatList,
+    SafeAreaView,
+    ActivityIndicator
+} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import video from '../../assets/data/video.json';
 import {AntDesign} from "@expo/vector-icons";
@@ -10,20 +20,33 @@ import BottomSheet, {BottomSheetModal} from "@gorhom/bottom-sheet";
 import VideoComments from "../../components/VideoComments";
 import VideoComment from "../../components/VideoComment";
 import comments from '../../assets/data/comments.json';
-
 const VideoScreen = () => {
 
-    let viewsString = video.views.toString();
-    if (video.views > 1_000_000){
-        viewsString = (video.views / 1_000_000).toFixed(1) + 'M';
-    } else if (video.views > 1_000) {
-        viewsString = (video.views / 1_000).toFixed(1) + 'K';
+    let viewsString = video?.views.toString();
+    if (video?.views > 1_000_000){
+        viewsString = (video?.views / 1_000_000).toFixed(1) + 'M';
+    } else if (video?.views > 1_000) {
+        viewsString = (video?.views / 1_000).toFixed(1) + 'K';
     }
     const commentsSheetRef = useRef<BottomSheetModal>(null);
 
     const openComments = () => {
         commentsSheetRef.current?.expand();
         // console.warn("Rokas");
+    }
+
+    // @ts-ignore
+    const [video, setVideo] = useState<Video | null>();
+
+    if(!video) {
+        return (
+            <View style={tw`mt-24 flex items-center`}>
+                <ActivityIndicator size="large" color="#00ff00" />
+                <Text style={tw`text-2xl text-gray-100 mt-5 `}>Nothing here :(</Text>
+                <Text style={tw`text-4xl text-green-500 mt-5 font-bold `}>404</Text>
+            </View>
+        )
+
     }
 
     return (
@@ -46,44 +69,44 @@ const VideoScreen = () => {
 
                     <View style={tw`flex flex-row mt-3`}>
                         <Text style={tw`text-gray-300`}>{viewsString}</Text>
-                        <Text style={tw`text-gray-300 ml-3`}>{video.createdAt}</Text>
+                        <Text style={tw`text-gray-300 ml-3`}>{video?.createdAt}</Text>
                     </View>
 
                     <View style={tw`mt-3`}>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false} >
                             <View style={tw`flex items-center`}>
                                 <AntDesign name="like1" size={33} color="lightgrey" />
-                                <Text style={tw`text-gray-200 mt-1`}>{video.likes}</Text>
+                                <Text style={tw`text-gray-200 mt-1`}>{video?.likes}</Text>
                             </View>
 
                             <View style={tw`flex items-center mx-3`}>
                                 <AntDesign name="dislike2" size={33} color="lightgrey" />
-                                <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
+                                <Text style={tw`text-gray-200 mt-1`}>{video?.dislikes}</Text>
                             </View>
 
                             <View style={tw`flex items-center mx-3`}>
                                 <AntDesign name="export" size={33} color="lightgrey" />
-                                <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
+                                <Text style={tw`text-gray-200 mt-1`}>{video?.dislikes}</Text>
                             </View>
 
                             <View style={tw`flex items-center mx-3`}>
                                 <AntDesign name="download" size={33} color="lightgrey" />
-                                <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
+                                <Text style={tw`text-gray-200 mt-1`}>{video?.dislikes}</Text>
                             </View>
 
                             <View style={tw`flex items-center mx-3`}>
                                 <AntDesign name="download" size={33} color="lightgrey" />
-                                <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
+                                <Text style={tw`text-gray-200 mt-1`}>{video?.dislikes}</Text>
                             </View>
 
                             <View style={tw`flex items-center mx-3`}>
                                 <AntDesign name="download" size={33} color="lightgrey" />
-                                <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
+                                <Text style={tw`text-gray-200 mt-1`}>{video?.dislikes}</Text>
                             </View>
 
                             <View style={tw`flex items-center mx-3`}>
                                 <AntDesign name="download" size={33} color="lightgrey" />
-                                <Text style={tw`text-gray-200 mt-1`}>{video.dislikes}</Text>
+                                <Text style={tw`text-gray-200 mt-1`}>{video?.dislikes}</Text>
                             </View>
                         </ScrollView>
                     </View>
@@ -94,7 +117,7 @@ const VideoScreen = () => {
                                 <Image source={{uri: video?.user?.image}} style={tw`w-10 h-10 rounded-full`} />
                             </View>
                             <View style={tw`flex flex-col ml-2 justify-center flex-1`}>
-                                <Text style={tw`text-gray-100 text-lg`}>{video.user.name}</Text>
+                                <Text style={tw`text-gray-100 text-lg`}>{video?.user.name}</Text>
                                 <Text style={tw`text-gray-400`}>{video?.user?.subscribers} subscribers</Text>
                             </View>
 
