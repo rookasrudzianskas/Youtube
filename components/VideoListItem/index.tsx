@@ -87,7 +87,6 @@ const VideoListItem = (props: VideoListItemProps) => {
                             </View>
                         </View>
 
-                        {/*    title row    */}
                     </View>
                 </View>
             </TouchableOpacity>
