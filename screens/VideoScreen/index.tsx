@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
     View,
     Text,
@@ -51,8 +51,11 @@ const VideoScreen = () => {
                 <Text style={tw`text-4xl text-green-500 mt-5 font-bold `}>404</Text>
             </View>
         )
-
     }
+
+    useEffect(() => {
+
+    }, []);
 
     return (
         <View style={tw`mt-12`}>
