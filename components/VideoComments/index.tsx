@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {View, Text, FlatList, TextInput} from 'react-native'
 import { BottomSheetFlatList } from '@gorhom/bottom-sheet';
 import VideoComment from '../VideoComment';
@@ -6,6 +6,9 @@ import tw from "tailwind-react-native-classnames";
 
 // @ts-ignore
 const VideoComments = ({comments}) => {
+
+    const [newComment, setNewComment] = useState('');
+
     return (
         <View style={tw`bg-gray-800`}>
             <View style={tw`flex items-center my-3 `}>
