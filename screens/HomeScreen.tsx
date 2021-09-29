@@ -12,14 +12,14 @@ import { Video } from '../src/models';
 
 const HomeScreen = () => {
 
-    const [videos, setVideos] = useState([]);
+    const [videos, setVideos] = useState<Video[]>([]);
 
     useEffect(() => {
         const fetchVideos = async () => {
             // @ts-ignore
             // fetch videos
             const response = await DataStore.query(Video);
-            console.log(response);
+            setVideos(response);
         }
 
         fetchVideos();
