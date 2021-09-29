@@ -15,8 +15,9 @@ const VideoComments = ({comments}) => {
                 data={comments}
                 renderItem={({item}) => <VideoComment comment={item} />}
             />
-
-            <TextInput style={tw`h-10 bg-white`} placeholder={"Write a new comment"} />
+            <View style={tw`flex mx-3 absolute -bottom-36 w-96 rounded-full`}>
+                <TextInput style={tw`h-10 bg-white pl-2 rounded-lg`} placeholder={"Write a new comment"} />
+            </View>
         </View>
     )
 }
