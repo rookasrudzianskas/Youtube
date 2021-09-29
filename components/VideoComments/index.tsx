@@ -19,7 +19,7 @@ const VideoComments = ({comments}) => {
                 renderItem={({item}) => <VideoComment comment={item} />}
             />
             <View style={tw`flex mx-3 absolute -bottom-36 w-96 rounded-full`}>
-                <TextInput style={tw`h-10 bg-white pl-2 rounded-lg`} placeholder={"Write a new comment"} />
+                <TextInput value={newComment} onValueChange={setNewComment} style={tw`h-10 bg-white pl-2 rounded-lg`} placeholder={"Write a new comment"} />
             </View>
         </View>
     )
