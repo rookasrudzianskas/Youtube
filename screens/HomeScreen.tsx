@@ -35,6 +35,7 @@ const HomeScreen = () => {
             <View style={tw``}>
                 {/*<VideoListItem />*/}
                 <FlatList style={{marginBottom: 350}} data={videos} renderItem={({item}) => (
+    // @ts-ignore
                     <VideoListItem key={item.id} video={item} />
                 )}/>
             </View>

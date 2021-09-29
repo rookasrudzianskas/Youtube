@@ -13,7 +13,7 @@ interface VideoListItemProps {
         videoUrl: string,
         duration: number,
         views: number,
-        user: {
+        User: {
             name: string,
             image?: string,
         },
@@ -56,7 +56,7 @@ const VideoListItem = (props: VideoListItemProps) => {
                         {/*    avatar   */}
                         <View style={tw`flex flex-row items-center `}>
                             <View style={tw`w-10 h-10`}>
-                                <Image style={tw`w-14 h-14 rounded-full`} source={{uri: video?.user?.image}} />
+                                <Image style={tw`w-14 h-14 rounded-full`} source={{uri: video?.User?.image}} />
                             </View>
 
                             {/*    middle container */}
@@ -66,7 +66,7 @@ const VideoListItem = (props: VideoListItemProps) => {
                                         <Text numberOfLines={2} style={tw`text-gray-100`}>{video?.title}</Text>
                                         <View style={tw`flex flex-row mt-1`}>
                                             <Text style={tw`text-gray-400 mr-3`}>
-                                                {video?.user?.name}
+                                                {video?.User?.name}
                                             </Text>
 
                                             <Text style={tw`text-gray-400 mr-3`}>
