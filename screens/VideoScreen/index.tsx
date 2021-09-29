@@ -26,17 +26,6 @@ import {Video} from '../../src/models';
 
 const VideoScreen = () => {
 
-    //@ts-ignore
-    let viewsString = video?.views.toString();
-    //@ts-ignore
-    if (video?.views > 1_000_000){
-    //@ts-ignore
-        viewsString = (video?.views / 1_000_000).toFixed(1) + 'M';
-    //@ts-ignore
-    } else if (video?.views > 1_000) {
-    //@ts-ignore
-        viewsString = (video?.views / 1_000).toFixed(1) + 'K';
-    }
     const commentsSheetRef = useRef<BottomSheetModal>(null);
 
     const openComments = () => {
@@ -55,6 +44,19 @@ const VideoScreen = () => {
                 <Text style={tw`text-4xl text-green-500 mt-5 font-bold `}>404</Text>
             </View>
         )
+    }
+
+
+    //@ts-ignore
+    let viewsString = video?.views.toString();
+    //@ts-ignore
+    if (video?.views > 1_000_000){
+        //@ts-ignore
+        viewsString = (video?.views / 1_000_000).toFixed(1) + 'M';
+        //@ts-ignore
+    } else if (video?.views > 1_000) {
+        //@ts-ignore
+        viewsString = (video?.views / 1_000).toFixed(1) + 'K';
     }
 
     const route = useRoute();
