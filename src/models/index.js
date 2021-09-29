@@ -7,7 +7,7 @@ import { schema } from './schema';
 const { Comment, User, Video } = initSchema(schema);
 
 export {
-    Comment,
-    User,
-    Video
+  Comment,
+  User,
+  Video
 };
