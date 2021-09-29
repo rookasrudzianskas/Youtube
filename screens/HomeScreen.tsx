@@ -9,7 +9,6 @@ import SuggestedWatch from "../components/SuggestedWatch";
 import VideoListItem from "../components/VideoListItem";
 
 
-import { initSchema } from "@aws-amplify/datastore";
 import { Video } from '../src/models';
 
 
