@@ -11,13 +11,13 @@ import VideoListItem from "../components/VideoListItem";
 
 import { initSchema } from "@aws-amplify/datastore";
 import { schema } from "../src/models/schema";
-// import { Video } from '../src/models';
+import { Video } from '../src/models';
 
 // @ts-ignore
-let models;
-if (typeof window !== "undefined") {
-    models = initSchema(schema);
-}
+// let models;
+// if (typeof window !== "undefined") {
+//     models = initSchema(schema);
+// }
 
 
 
@@ -29,7 +29,7 @@ const HomeScreen = () => {
         const fetchVideos = async () => {
             // @ts-ignore
             // fetch videos
-            const response = await DataStore.query(models.Video);
+            const response = await DataStore.query(Video);
             console.log(response);
         }
 
