@@ -22,10 +22,15 @@ import VideoComment from "../../components/VideoComment";
 import comments from '../../assets/data/comments.json';
 const VideoScreen = () => {
 
+    //@ts-ignore
     let viewsString = video?.views.toString();
+    //@ts-ignore
     if (video?.views > 1_000_000){
+    //@ts-ignore
         viewsString = (video?.views / 1_000_000).toFixed(1) + 'M';
+    //@ts-ignore
     } else if (video?.views > 1_000) {
+    //@ts-ignore
         viewsString = (video?.views / 1_000).toFixed(1) + 'K';
     }
     const commentsSheetRef = useRef<BottomSheetModal>(null);
