@@ -14,10 +14,11 @@ interface VideoCommentsProps {
 // @ts-ignore
 const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
 
-    const [newComment, setNewComment] = useState('');
+    const [newComment, setNewComment] = useState([]);
     const userInfo = await Auth.currentAuthenticatedUser();
     const sendComment = async () => {
         await DataStore.save(new Comment({
+        // @ts-ignore
             comment: newComment,
             likes: 0,
             dislikes: 0,
@@ -27,7 +28,7 @@ const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
             userID: userInfo.attributes.sub,
         }));
 
-        setNewComment('');
+        setNewComment([]);
     }
 
     return (
