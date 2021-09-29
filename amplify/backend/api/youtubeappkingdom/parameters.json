@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "youtubeappkingdom",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authyoutubeappkingdomcc790395",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
