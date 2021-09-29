@@ -23,7 +23,7 @@ const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
             dislikes: 0,
             replies: 0,
             videoID: videoID,
-            userID: userInfo.,
+            userID: userInfo.sub,
         }));
 
         setNewComment('');
