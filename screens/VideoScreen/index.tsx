@@ -23,6 +23,7 @@ import comments from '../../assets/data/comments.json';
 import {useRoute} from "@react-navigation/native";
 import { DataStore } from 'aws-amplify';
 import {Video} from '../../src/models';
+import {Comment} from '../../src/models';
 
 const VideoScreen = () => {
 
@@ -69,7 +70,7 @@ const VideoScreen = () => {
     }, [videoId]);
 
     useEffect(() => {
-
+        DataStore.query(Comment).filter(comment => comment.videoId === video.id).then(setComments);
     }, [video]);
 
 
