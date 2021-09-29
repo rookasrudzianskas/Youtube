@@ -43,7 +43,7 @@ const VideoScreen = () => {
     // @ts-ignore
     const [video, setVideo] = useState<Video | null>();
 
-    if(!video) {
+    if(video === null) {
         return (
             <View style={tw`mt-24 flex items-center`}>
                 <ActivityIndicator size="large" color="#00ff00" />
