@@ -13,12 +13,6 @@ import { initSchema } from "@aws-amplify/datastore";
 import { schema } from "../src/models/schema";
 import { Video } from '../src/models';
 
-// @ts-ignore
-// let models;
-// if (typeof window !== "undefined") {
-//     models = initSchema(schema);
-// }
-
 
 
 const HomeScreen = () => {
