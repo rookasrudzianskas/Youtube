@@ -8,7 +8,6 @@ import SuggestedWatch from "../components/SuggestedWatch";
 // import videos from '../assets/data/videos.json';
 import VideoListItem from "../components/VideoListItem";
 
-
 import { Video } from '../src/models';
 
 
