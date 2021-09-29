@@ -23,6 +23,8 @@ const HomeScreen = () => {
         }
 
         fetchVideos();
+
+        // DataStore.query(Video).then(setVideos);
     }, []);
     return (
         <View style={tw`flex`}>
