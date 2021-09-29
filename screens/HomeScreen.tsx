@@ -8,9 +8,10 @@ import SuggestedWatch from "../components/SuggestedWatch";
 // import videos from '../assets/data/videos.json';
 import VideoListItem from "../components/VideoListItem";
 
+
 import { initSchema } from "@aws-amplify/datastore";
 import { schema } from "../src/models/schema";
-import { Video } from '../src/models';
+// import { Video } from '../src/models';
 
 // @ts-ignore
 let models;
@@ -22,15 +23,18 @@ if (typeof window !== "undefined") {
 
 const HomeScreen = () => {
 
-    const [videos, setVideos] = useState<Video[]>([]);
-    console.log("These are the videos", videos);
+    const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-        // fetch videos
-        DataStore.query(Video).then(setVideos);
-    }, []);
+        const fetchVideos = async () => {
+            // @ts-ignore
+            // fetch videos
+            const response = await DataStore.query(models.Video);
+            console.log(response);
+        }
 
-    console.log("These are the videos", videos);
+        fetchVideos();
+    }, []);
     return (
         <View style={tw`flex`}>
             {/*  Header   */}
