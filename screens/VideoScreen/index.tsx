@@ -67,6 +67,7 @@ const VideoScreen = () => {
         DataStore.query(Video, videoId).then(setVideo);
     }, [videoId]);
 
+
     return (
         <View style={tw`mt-12`}>
             <View style={tw``}>
