@@ -19,7 +19,6 @@ import VideoPlayer from "../../components/VideoPlayer";
 import BottomSheet, {BottomSheetModal} from "@gorhom/bottom-sheet";
 import VideoComments from "../../components/VideoComments";
 import VideoComment from "../../components/VideoComment";
-import comments from '../../assets/data/comments.json';
 import {useRoute} from "@react-navigation/native";
 import { DataStore } from 'aws-amplify';
 import {Video} from '../../src/models';
