@@ -14,22 +14,22 @@ interface VideoCommentsProps {
 // @ts-ignore
 const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
 
-    const [newComment, setNewComment] = useState([]);
+    // const [newComment, setNewComment] = useState('');
     const userInfo = await Auth.currentAuthenticatedUser();
-    const sendComment = async () => {
-        await DataStore.save(new Comment({
-        // @ts-ignore
-            comment: newComment,
-            likes: 0,
-            dislikes: 0,
-            replies: 0,
-            videoID: videoID,
-        // @ts-ignore
-            userID: userInfo.attributes.sub,
-        }));
-
-        setNewComment([]);
-    }
+    // const sendComment = async () => {
+    //     await DataStore.save(new Comment({
+    //     // @ts-ignore
+    //         comment: newComment,
+    //         likes: 0,
+    //         dislikes: 0,
+    //         replies: 0,
+    //         videoID: videoID,
+    //     // @ts-ignore
+    //         userID: userInfo.attributes.sub,
+    //     }));
+    //
+    //     setNewComment('');
+    // }
 
     return (
         <View style={tw`bg-gray-800`}>
@@ -41,9 +41,14 @@ const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
                 renderItem={({item}) => <VideoComment comment={item}/>}
             />
             <View style={tw`flex mx-3 absolute -bottom-36 w-96 rounded-full`}>
-                <TextInput value={newComment} onChangeText={setNewComment} style={tw`h-10 bg-white pl-2 rounded-lg`}
+                <TextInput
+                    // value={newComment}
+                    // onChangeText={setNewComment}
+                    style={tw`h-10 bg-white pl-2 rounded-lg`}
                            placeholder={"Write a new comment"}/>
-                <TouchableOpacity onPress={sendComment} activeOpacity={0.8}>
+                <TouchableOpacity
+                    // onPress={sendComment}
+                    activeOpacity={0.8}>
                     <View style={tw`mt-4 bg-green-500 w-36 flex items-center py-2 rounded-lg`}>
                         <Text style={tw`font-bold text-gray-100`}>Comment</Text>
                     </View>
