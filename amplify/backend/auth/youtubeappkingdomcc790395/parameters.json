@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "youtubef2a2daa8_identitypool_f2a2daa8",
+    "identityPoolName": "youtubeappkingdomcc790395_identitypool_cc790395",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "youtubf2a2daa8",
-    "userPoolName": "youtubef2a2daa8_userpool_f2a2daa8",
+    "resourceNameTruncated": "youtubcc790395",
+    "userPoolName": "youtubeappkingdomcc790395_userpool_cc790395",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -29,10 +29,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "youtubf2a2daa8_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "youtubcc790395_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "f2a2daa8",
-    "resourceName": "youtubef2a2daa8",
+    "sharedId": "cc790395",
+    "resourceName": "youtubeappkingdomcc790395",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [

@@ -1,6 +1,6 @@
 {
   "auth": {
-    "youtubef2a2daa8": {
+    "youtubeappkingdomcc790395": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -23,23 +23,6 @@
         "verificationMechanisms": [
           "EMAIL"
         ]
-      }
-    }
-  },
-  "api": {
-    "youtube": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authyoutubef2a2daa8"
-            }
-          },
-          "additionalAuthenticationProviders": []
-        }
       }
     }
   }
