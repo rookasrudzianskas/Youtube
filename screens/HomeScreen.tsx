@@ -10,7 +10,6 @@ import VideoListItem from "../components/VideoListItem";
 
 
 import { initSchema } from "@aws-amplify/datastore";
-import { schema } from "../src/models/schema";
 import { Video } from '../src/models';
 
 
