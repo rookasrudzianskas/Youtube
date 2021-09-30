@@ -186,7 +186,6 @@ const VideoScreen = () => {
                         </Pressable>
                     </View>
 
-                {/*    recommended */}
                     <View style={tw`mt-10`}>
                         {/*<VideoListItem />*/}
                         <FlatList style={{marginBottom: 250}} data={videos} renderItem={({item}) => (
