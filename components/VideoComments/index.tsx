@@ -14,7 +14,6 @@ interface VideoCommentsProps {
 // @ts-ignore
 const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
 
-    // console.log("THESE ARE THE COMMENTS", comments)
     const [newComment, setNewComment] = useState('');
     const userInfo = await Auth.currentAuthenticatedUser();
     const sendComment = async () => {
