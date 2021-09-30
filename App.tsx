@@ -27,6 +27,7 @@ const App = () => {
     const saveUserToDB = async () => {
       //  get user from cognito
       const userInfo = await Auth.currentAuthenticatedUser();
+      // here 🔥
       if(!userInfo) {
         return;
       }
