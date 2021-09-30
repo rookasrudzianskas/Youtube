@@ -23,7 +23,7 @@ import {useRoute} from "@react-navigation/native";
 import { DataStore } from 'aws-amplify';
 import {Video} from '../../src/models';
 import {Comment} from '../../src/models';
-import comments from '../../assets/data/comments';
+// import comments from '../../assets/data/comments';
 
 const VideoScreen = () => {
 
@@ -36,7 +36,7 @@ const VideoScreen = () => {
 
     // @ts-ignore
     const [video, setVideo] = useState<Video | undefined>();
-    // const [comments, setComments] = useState<Comment[]>([]);
+    const [comments, setComments] = useState<Comment[]>([]);
 
     if(video === null) {
         return (
@@ -70,17 +70,17 @@ const VideoScreen = () => {
     }, [videoId]);
 
 
-    // useEffect(() => {
-    //     const fetchComments = async () => {
-    //         if(!video) {return}
-    //         const videoComments = (await DataStore.query(Comment)).filter(
-    //             (comment) => comment.videoID === video.id
-    //         );
-    //         setComments(videoComments);
-    //     };
-    //
-    //     fetchComments();
-    // }, [video]);
+    useEffect(() => {
+        const fetchComments = async () => {
+            if(!video) {return}
+            const videoComments = (await DataStore.query(Comment)).filter(
+                (comment) => comment.videoID === video.id
+            );
+            // setComments(videoComments);
+        };
+
+        fetchComments();
+    }, [video]);
 
 
     // @ts-ignore
@@ -201,7 +201,7 @@ const VideoScreen = () => {
                     ref={commentsSheetRef} snapPoints={[0, '100%']} index={-1}>
                     <View style={tw`flex bg-gray-800 flex-1`}>
                         {/*@ts-ignore*/}
-                        {comments.length > 0 && <VideoComments videoID={video.id} comments={comments}/>}
+                        {comments.length > 0 && <VideoComments videoID={video?.id} comments={comments}/>}
                     </View>
                 </BottomSheet>
 
