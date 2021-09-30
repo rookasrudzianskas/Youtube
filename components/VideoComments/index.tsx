@@ -14,6 +14,7 @@ interface VideoCommentsProps {
 // @ts-ignore
 const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
 
+    console.log("THESE ARE THE COMMENTS", comments)
     const [newComment, setNewComment] = useState('');
     const userInfo = await Auth.currentAuthenticatedUser();
     const sendComment = async () => {
@@ -36,10 +37,10 @@ const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
             <View style={tw`flex items-center my-3 `}>
                 <Text style={tw`flex items-center justify-center text-lg text-gray-100`}>Comments for this video</Text>
             </View>
-            <FlatList
-                data={comments}
-                renderItem={({item}) => <VideoComment comment={item}/>}
-            />
+            {/*<FlatList*/}
+            {/*    data={comments}*/}
+            {/*    renderItem={({item}) => <VideoComment comment={item}/>}*/}
+            {/*/>*/}
             <View style={tw`flex mx-3 absolute -bottom-36 w-96 rounded-full`}>
                 <TextInput
                     value={newComment}
