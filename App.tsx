@@ -26,7 +26,9 @@ const App = () => {
     const saveUserToDB = async () => {
       //  get user from cognito
       const userInfo = await Auth.currentAuthenticatedUser();
-
+      if(!userInfo) {
+        return;
+      }
       //  check if user exists in the db
 
       //  if not, save the user in database.
