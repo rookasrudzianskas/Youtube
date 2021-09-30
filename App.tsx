@@ -30,7 +30,7 @@ const App = () => {
         return;
       }
       const userId = userInfo.attributes.sub;
-      console.warn(userId);
+      // console.warn(userId);
       //  check if user exists in the db
 
       //  if not, save the user in database.
