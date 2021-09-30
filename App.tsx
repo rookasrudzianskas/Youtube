@@ -11,6 +11,7 @@ import Amplify, {Auth, DataStore} from 'aws-amplify';
 import config from './src/aws-exports';
 //@ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native';
+import { User } from './src/models';
 
 Amplify.configure({
   ...config,
@@ -32,7 +33,15 @@ const App = () => {
       const userId = userInfo.attributes.sub;
       // console.warn(userId);
       //  check if user exists in the db
-      const user = await DataStore()
+      // @ts-ignore
+      const user = await DataStore(User, {
+        userId
+      });
+      if(!user) {
+
+      } else {
+        console.warn("The user already exist in the db");
+      }
       //  if not, save the user in database.
     };
 
