@@ -7,7 +7,7 @@ import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 import VideoScreen from "./screens/VideoScreen";
 //@ts-ignore
-import Amplify, {Auth} from 'aws-amplify';
+import Amplify, {Auth, DataStore} from 'aws-amplify';
 import config from './src/aws-exports';
 //@ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native';
@@ -32,7 +32,7 @@ const App = () => {
       const userId = userInfo.attributes.sub;
       // console.warn(userId);
       //  check if user exists in the db
-
+      const user = await DataStore()
       //  if not, save the user in database.
     };
 
