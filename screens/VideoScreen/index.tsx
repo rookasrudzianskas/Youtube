@@ -76,7 +76,7 @@ const VideoScreen = () => {
                 (comment) => comment.videoID === video.id
             );
             console.log(videoComments);
-            // setComments(videoComments);
+            setComments(videoComments);
         };
 
         fetchComments();
