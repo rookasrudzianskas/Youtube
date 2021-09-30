@@ -72,7 +72,9 @@ const VideoScreen = () => {
     useEffect(() => {
         const fetchComments = async () => {
             if(!video) {return}
-            const videoComments = (await DataStore.query(Comment));
+            const videoComments = (await DataStore.query(Comment)).filter(
+                (comment) => comment.videoID === video.id
+            );
             console.log(videoComments);
             // setComments(videoComments);
         };
