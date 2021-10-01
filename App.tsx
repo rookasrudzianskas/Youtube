@@ -38,8 +38,10 @@ const App = () => {
       const user = await DataStore(User, {
         userId
       });
-      if(!user) {
 
+      if(!user) {
+      //  if there is no user in the DB
+        await DataStore.save(new User());
       } else {
         console.warn("The user already exist in the db");
       }
