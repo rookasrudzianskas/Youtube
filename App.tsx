@@ -38,7 +38,7 @@ const App = () => {
       if(!user) {
       //  if there is no user in the DB
         await DataStore.save(new User({
-      // @ts-ignore
+          // @ts-ignore
           id: userId,
           name: userInfo.attributes.email,
           subscribers: 0,
