@@ -21,13 +21,12 @@ Amplify.configure({
 });
 const App = () => {
   const isLoadingComplete = useCachedResources();
-
   const colorScheme = useColorScheme();
+
   useEffect(() => {
     const saveUserToDB = async () => {
       //  get user from cognito
       const userInfo = await Auth.currentAuthenticatedUser();
-      // here 🔥
       if(!userInfo) {
         return;
       }
