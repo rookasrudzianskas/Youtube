@@ -32,7 +32,6 @@ const App = () => {
         return;
       }
       const userId = userInfo.attributes.sub;
-      // console.warn(userId);
       //  check if user exists in the db
       // @ts-ignore
       const user = await DataStore.query(User, userId);
