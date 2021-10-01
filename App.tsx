@@ -31,6 +31,7 @@ const App = () => {
       if(!userInfo) {
         return;
       }
+      console.log(userInfo);
       const userId = userInfo.attributes.sub;
       // console.warn(userId);
       //  check if user exists in the db
