@@ -41,7 +41,10 @@ const App = () => {
 
       if(!user) {
       //  if there is no user in the DB
-        await DataStore.save(new User());
+        await DataStore.save(new User({
+          name: '',
+          subscribers: 0,
+        }));
       } else {
         console.warn("The user already exist in the db");
       }
