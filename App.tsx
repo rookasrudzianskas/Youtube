@@ -39,6 +39,7 @@ const App = () => {
       //  if there is no user in the DB
         await DataStore.save(new User({
           // @ts-ignore
+          // does not work, because you cannot register the id yourself
           id: userId,
           name: userInfo.attributes.email,
           subscribers: 0,
