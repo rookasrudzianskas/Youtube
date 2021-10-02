@@ -15,11 +15,11 @@ const VideoComment = ({comment}: VideoCommentProps) => {
 
     useEffect(() => {
         // @ts-ignore
-        DataStore.query(User, comment.userID).then(setUser);
+        DataStore.query(User, comment.userID as string).then(setUser);
     }, []);
     return (
         <View style={tw`flex flex-row items-center mx-3 my-1 bg-gray-700 p-2 rounded-xl`}>
-            <Image source={{uri: comment?.User?.image}} style={tw`w-10 h-10 rounded-full`} />
+            <Image source={{uri: user?.image}} style={tw`w-10 h-10 rounded-full`} />
             <Text style={tw`text-gray-100 ml-2`}>{comment?.comment || 'Something cool'}</Text>
             {/*<Text>Rokas</Text>*/}
         </View>
