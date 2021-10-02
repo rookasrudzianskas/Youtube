@@ -16,6 +16,7 @@ const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
 
     const [newComment, setNewComment] = useState('');
     const userInfo = await Auth.currentAuthenticatedUser();
+    const userSub = userInfo.attributes.sub;
     const sendComment = async () => {
         await DataStore.save(new Comment({
         // @ts-ignore
