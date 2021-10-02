@@ -31,11 +31,13 @@ function App() {
       const userId = userInfo.attributes.sub;
 
       // check if user exists in DB
+      // @ts-ignore
       const user = (await DataStore.query(User)).find(user => user.sub === userId);
       if (user) {
         // if not, save user to db.
         await DataStore.save(
             new User({
+        // @ts-ignore
               sub: userId,
               name: userInfo.attributes.email,
               subscribers: 0,
