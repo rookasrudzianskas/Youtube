@@ -26,7 +26,6 @@ const App = () => {
   useEffect(() => {
     const saveUserToDB = async () => {
       // get user  from cognito
-      // get user  from cognito
       const userInfo = await Auth.currentAuthenticatedUser();
 
       if (!userInfo) {
