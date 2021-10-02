@@ -4,7 +4,7 @@ import { BottomSheetFlatList } from '@gorhom/bottom-sheet';
 import VideoComment from '../VideoComment';
 import tw from "tailwind-react-native-classnames";
 
-import {Comment} from '../../src/models';
+import {Comment, User} from '../../src/models';
 import {Auth, DataStore} from 'aws-amplify';
 
 interface VideoCommentsProps {
@@ -17,7 +17,8 @@ const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
     const [newComment, setNewComment] = useState('');
     const userInfo = await Auth.currentAuthenticatedUser();
     const userSub = userInfo.attributes.sub;
-
+    // @ts-ignore
+    const user = (await DataStore.query(User)).find(u => u.sub === userSub);
 
 
     const sendComment = async () => {
