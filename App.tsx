@@ -39,20 +39,20 @@ const App = () => {
       // @ts-ignore
       const user = (await DataStore.query(User)).find(user => user.sub === userId);
 
-      console.log("This is the user");
-      // if (!user) {
-      //   // if not, save user to db.
-      //   await DataStore.save(
-      //       new User({
-      //   // @ts-ignore
-      //         sub: userId,
-      //         name: userInfo.attributes.email,
-      //         subscribers: 0,
-      //       })
-      //   );
-      // } else {
-      //   console.log("User already exists in DB");
-      // }
+      console.log("This is the user", user);
+      if (!user) {
+        // if not, save user to db.
+        await DataStore.save(
+            new User({
+        // @ts-ignore
+              sub: userId,
+              name: userInfo.attributes.email,
+              subscribers: 0,
+            })
+        );
+      } else {
+        console.log("User already exists in DB");
+      }
     };
 
     saveUserToDB();
