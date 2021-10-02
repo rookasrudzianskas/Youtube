@@ -34,3 +34,4 @@ type Video @model @key(name: "byUser", fields: ["userID"]) @auth(rules: [{allow:
   Comments: [Comment] @connection(keyName: "byVideo", fields: ["id"])
   userID: ID
 }
+ 

@@ -38,7 +38,7 @@ function App() {
         await DataStore.save(
             new User({
         // @ts-ignore
-              sub: userId,
+              sub: userId.toString(),
               name: userInfo.attributes.email,
               subscribers: 0,
             })
