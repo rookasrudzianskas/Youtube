@@ -76,7 +76,7 @@ const VideoScreen = () => {
             const videoComments = (await DataStore.query(Comment)).filter(
                 (comment) => comment.videoID === video.id
             );
-            // setComments(videoComments);
+            setComments(videoComments);
         };
 
         fetchComments();
