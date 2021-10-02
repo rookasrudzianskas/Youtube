@@ -44,6 +44,7 @@ function App() {
             })
         );
       } else {
+        //  done
         console.warn("User already exists in DB");
       }
     };
