@@ -33,7 +33,7 @@ function App() {
       // check if user exists in DB
       // @ts-ignore
       const user = (await DataStore.query(User)).find(user => user.sub === userId);
-      if (user) {
+      if (!user) {
         // if not, save user to db.
         await DataStore.save(
             new User({
