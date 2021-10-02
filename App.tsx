@@ -34,7 +34,6 @@ function App() {
       const user = (await DataStore.query(User)).find(user => user.sub === userId);
         console.log("THis is super", user);
       if (user) {
-        console.log("THis is super user from if", user);
         // if not, save user to db.
         await DataStore.save(
             new User({
