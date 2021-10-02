@@ -20,6 +20,10 @@ const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
     // @ts-ignore
     const user = (await DataStore.query(User)).find(u => u.sub === userSub);
 
+    if(!user) {
+        console.log("Error");
+        return;
+    }
 
     const sendComment = async () => {
         await DataStore.save(new Comment({
