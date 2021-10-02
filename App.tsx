@@ -23,6 +23,7 @@ const App = () => {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
+
   useEffect(() => {
     const saveUserToDB = async () => {
       // get user  from cognito
@@ -31,25 +32,21 @@ const App = () => {
       if (!userInfo) {
         return;
       }
-
       const userId = userInfo.attributes.sub;
 
       // check if user exists in DB
-      // @ts-ignore
-      const user = (await DataStore.query(User)).filter(user => user.sub === userId);
-
+      const user = (await DataStore.query(User)).find(user => user.sub === userId);
       if (!user) {
         // if not, save user to db.
         await DataStore.save(
             new User({
-        // @ts-ignore
               sub: userId,
               name: userInfo.attributes.email,
               subscribers: 0,
             })
         );
       } else {
-        console.log("User already exists in DB");
+        console.warn("User already exists in DB");
       }
     };
 
