@@ -30,7 +30,7 @@ const VideoComments = async ({comments, videoID}: VideoCommentsProps) => {
             replies: 0,
             videoID: videoID,
         // @ts-ignore
-            userID: userInfo.attributes.sub,
+            userID: user.id.toString(),
         }));
 
         setNewComment('');
