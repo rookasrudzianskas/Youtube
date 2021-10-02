@@ -40,7 +40,7 @@ const App = () => {
         await DataStore.save(new User({
           // @ts-ignore
           // does not work, because you cannot register the id yourself
-          id: userId,
+          sub: userId,
           name: userInfo.attributes.email,
           subscribers: 0,
         }));
