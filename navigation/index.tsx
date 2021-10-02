@@ -12,6 +12,7 @@ import LinkingConfiguration from "./LinkingConfiguration";
 import BottomTabNavigator from "./BottomTabNavigator";
 import HomeScreen from "../screens/HomeScreen";
 import VideoScreen from "../screens/VideoScreen";
+import VideoUploadScreen from "../screens/VideoUploadScreen";
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
     return (
