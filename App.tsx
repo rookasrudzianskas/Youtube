@@ -26,29 +26,33 @@ const App = () => {
   useEffect(() => {
     const saveUserToDB = async () => {
       // get user  from cognito
+      // get user  from cognito
       const userInfo = await Auth.currentAuthenticatedUser();
 
       if (!userInfo) {
         return;
       }
+
       const userId = userInfo.attributes.sub;
 
       // check if user exists in DB
       // @ts-ignore
       const user = (await DataStore.query(User)).find(user => user.sub === userId);
-      if (!user) {
-        // if not, save user to db.
-        await DataStore.save(
-            new User({
-        // @ts-ignore
-              sub: userId,
-              name: userInfo.attributes.email,
-              subscribers: 0,
-            })
-        );
-      } else {
-        console.warn("User already exists in DB");
-      }
+
+      console.log("This is the user");
+      // if (!user) {
+      //   // if not, save user to db.
+      //   await DataStore.save(
+      //       new User({
+      //   // @ts-ignore
+      //         sub: userId,
+      //         name: userInfo.attributes.email,
+      //         subscribers: 0,
+      //       })
+      //   );
+      // } else {
+      //   console.log("User already exists in DB");
+      // }
     };
 
     saveUserToDB();
