@@ -1,28 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {useEffect} from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import "react-native-gesture-handler";
+import { StatusBar } from "expo-status-bar";
+import React, { useEffect } from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
+import Amplify, { Auth, DataStore } from "aws-amplify";
+// @ts-ignore
+import { withAuthenticator } from "aws-amplify-react-native";
+import config from "./src/aws-exports";
+Amplify.configure(config);
+
+import useCachedResources from "./hooks/useCachedResources";
+import useColorScheme from "./hooks/useColorScheme";
+import Navigation from "./navigation";
 import VideoScreen from "./screens/VideoScreen";
-//@ts-ignore
-import Amplify, {Auth, DataStore} from 'aws-amplify';
-import config from './src/aws-exports';
-//@ts-ignore
-import { withAuthenticator } from 'aws-amplify-react-native';
-import { User } from './src/models';
 
-Amplify.configure({
-  ...config,
-  Analytics: {
-    disabled: true,
-  },
-});
-const App = () => {
+import { User } from "./src/models";
+
+function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
-
 
   useEffect(() => {
     const saveUserToDB = async () => {
@@ -36,7 +32,9 @@ const App = () => {
 
       // check if user exists in DB
       const user = (await DataStore.query(User)).find(user => user.sub === userId);
-      if (!user) {
+        console.log("THis is super", user);
+      if (user) {
+        console.log("THis is super user from if", user);
         // if not, save user to db.
         await DataStore.save(
             new User({
@@ -53,15 +51,14 @@ const App = () => {
     saveUserToDB();
   }, []);
 
-
   if (!isLoadingComplete) {
     return null;
   } else {
     return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={'dark'} />
-        <StatusBar />
-      </SafeAreaProvider>
+        <SafeAreaProvider>
+          <Navigation colorScheme={"dark"} />
+          <StatusBar />
+        </SafeAreaProvider>
     );
   }
 }
