@@ -33,7 +33,7 @@ const App = () => {
       const userId = userInfo.attributes.sub;
       //  check if user exists in the db
       // @ts-ignore
-      const user = await DataStore.query(User, userId);
+      const user = (await DataStore.query(User, userId)).filter(user => user.sub === userId);
 
       if(!user) {
       //  if there is no user in the DB
