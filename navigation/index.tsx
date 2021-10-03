@@ -35,7 +35,7 @@ function RootNavigator() {
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
     {/*// @ts-ignore*/}
             <Stack.Screen name="VideoScreen" component={VideoScreen} />
-            {/*// @ts-ignore*/}
+    {/*// @ts-ignore*/}
             <Stack.Screen name="VideoUpload" component={VideoUploadScreen} />
     {/*// @ts-ignore*/}
             <Stack.Screen name="WelcomeScreen" component={TabOneScreen} />
