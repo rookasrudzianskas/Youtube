@@ -5,7 +5,7 @@ import tw from "tailwind-react-native-classnames";
 
 const VideoUploadScreen = () => {
 
-    const [video, setVideo] = useState(null);
+    const [video, setVideo] = useState<string | null>(null);
 
     useEffect(() => {
         (async () => {
@@ -30,7 +30,6 @@ const VideoUploadScreen = () => {
         console.log(result);
 
         if (!result.cancelled) {
-            //@ts-ignore
             setVideo(result.uri);
         }
     };
