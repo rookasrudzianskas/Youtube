@@ -53,5 +53,11 @@
         }
       }
     }
+  },
+  "storage": {
+    "youtubeMedia": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
     "identityPoolName": "youtubeappkingdomcc790395_identitypool_cc790395",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "youtubcc790395",
     "userPoolName": "youtubeappkingdomcc790395_userpool_cc790395",
     "autoVerifiedAttributes": [
