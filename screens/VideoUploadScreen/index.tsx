@@ -57,7 +57,11 @@ const VideoUploadScreen = () => {
             </TouchableOpacity>
 
                 <TouchableOpacity activeOpacity={0.8}>
-
+                    <View style={[{position: 'absolute', top: -10, right: 185}, tw`bg-white p-2 rounded-lg`]}>
+                        <Text style={tw`text-black`}>
+                            Upload
+                        </Text>
+                    </View>
                 </TouchableOpacity>
             </View>
         </View>
