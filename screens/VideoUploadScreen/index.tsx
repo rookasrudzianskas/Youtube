@@ -55,6 +55,10 @@ const VideoUploadScreen = () => {
                     </View>
                 </View>
             </TouchableOpacity>
+
+                <TouchableOpacity activeOpacity={0.8}>
+
+                </TouchableOpacity>
             </View>
         </View>
     );
