@@ -3,6 +3,9 @@ import { Button, Image, View, Platform, Text, TouchableOpacity } from 'react-nat
 import * as ImagePicker from 'expo-image-picker';
 import tw from "tailwind-react-native-classnames";
 import VideoPlayer from "../../components/VideoPlayer";
+// @ts-ignore
+import { v4 as uuidv4 } from 'uuid';
+
 
 const VideoUploadScreen = () => {
 
