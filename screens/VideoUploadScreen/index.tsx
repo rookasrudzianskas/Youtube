@@ -19,7 +19,7 @@ const VideoUploadScreen = () => {
     }, []);
 
 
-    const pickImage = async () => {
+    const pickVideo = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.All,
             allowsEditing: true,
@@ -45,7 +45,7 @@ const VideoUploadScreen = () => {
             <View style={tw`flex mb-10`}>
             <TouchableOpacity activeOpacity={0.8}>
                 <View style={tw`flex bg-gray-100 mx-10 rounded-lg`}>
-                    <Button title="Pick a video from camera roll" onPress={pickImage} />
+                    <Button title="Pick a video from camera roll" onPress={pickVideo} />
             {/*// @ts-ignore*/}
                     {video && <Image source={{ uri: video }} style={{ width: 200, height: 200 }} />}
                 </View>
