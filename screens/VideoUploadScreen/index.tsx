@@ -23,7 +23,6 @@ const VideoUploadScreen = () => {
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.Videos,
             allowsEditing: true,
-            aspect: [4, 3],
             quality: 1,
         });
 
