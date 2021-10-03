@@ -42,7 +42,7 @@ const VideoUploadScreen = () => {
                 <Text style={tw`text-white text-lg`}>Upload Video</Text>
             </View>
 
-            <TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8}>
                 <View style={tw`flex items-center justify-center mt-64 bg-gray-100 mx-10 rounded-lg`}>
                     <Button title="Pick an image from camera roll" onPress={pickImage} />
             {/*// @ts-ignore*/}
