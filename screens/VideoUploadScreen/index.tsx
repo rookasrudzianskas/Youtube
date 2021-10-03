@@ -37,6 +37,7 @@ const VideoUploadScreen = () => {
 
     // @ts-ignore
     return (
+
         <View style={tw`flex flex-1`}>
             <View style={tw`mt-10 flex items-center flex-1`}>
                 <Text style={tw`text-white text-lg`}>Upload Video</Text>
