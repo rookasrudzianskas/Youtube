@@ -43,7 +43,8 @@
     "react-native-screens": "~3.4.0",
     "react-native-web": "~0.13.12",
     "tailwind-react-native-classnames": "^1.5.1",
-    "twrnc": "^2.0.0-beta.6"
+    "twrnc": "^2.0.0-beta.6",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
