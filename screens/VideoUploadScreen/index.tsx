@@ -37,18 +37,20 @@ const VideoUploadScreen = () => {
 
     // @ts-ignore
     return (
-        <View style={tw``}>
+        <View style={tw`flex`}>
             <View style={tw`mt-10 flex items-center`}>
                 <Text style={tw`text-white text-lg`}>Upload Video</Text>
             </View>
 
+            <View style={tw`flex`}>
             <TouchableOpacity activeOpacity={0.8}>
-                <View style={tw`flex items-center justify-center mt-64 bg-gray-100 mx-10 rounded-lg`}>
+                <View style={tw`flex bg-gray-100 mx-10 rounded-lg`}>
                     <Button title="Pick an image from camera roll" onPress={pickImage} />
             {/*// @ts-ignore*/}
                     {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
                 </View>
             </TouchableOpacity>
+            </View>
         </View>
     );
 };
