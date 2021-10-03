@@ -37,6 +37,11 @@ const VideoUploadScreen = () => {
         }
     };
 
+    // @ts-ignore
+    const uploadVideo = async(): Promise<string> => {
+
+    }
+
     const uploadPost = () => {
 
     }
