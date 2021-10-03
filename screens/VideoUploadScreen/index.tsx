@@ -39,11 +39,27 @@ const VideoUploadScreen = () => {
 
     // @ts-ignore
     const uploadVideo = async(): Promise<string> => {
-
+        if(!video) {
+            // @ts-ignore
+            return;
+        }
+        try {
+            // @ts-ignore
+            const response = await fetch(video?.uri);
+            const blob = await response.blob();
+            // @ts-ignore
+            await Storage.put('yourKeyHere', blob, {
+                contentType: 'image/jpeg', // contentType is optional
+            });
+        } catch (err) {
+            console.log('Error uploading file:', err);
+        }
     }
 
     const uploadPost = () => {
-
+        if(!video) {
+            return;
+        }
     }
 
     // @ts-ignore
