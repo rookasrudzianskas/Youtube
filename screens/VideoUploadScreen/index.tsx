@@ -30,6 +30,7 @@ const VideoUploadScreen = () => {
         console.log(result);
 
         if (!result.cancelled) {
+            //@ts-ignore
             setImage(result.uri);
         }
     };
@@ -41,8 +42,11 @@ const VideoUploadScreen = () => {
                 <Text style={tw`text-white text-lg`}>Upload Video</Text>
             </View>
 
-            <Button title="Pick an image from camera roll" onPress={pickImage} />
-            {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+            <View style={tw``}>
+                <Button title="Pick an image from camera roll" onPress={pickImage} />
+        {/*// @ts-ignore*/}
+                {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+            </View>
         </View>
     );
 };
