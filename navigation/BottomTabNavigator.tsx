@@ -5,6 +5,7 @@ import TabOneScreen from '../screens/TabOneScreen';
 import { BottomTabParamList } from '../types';
 import TabTwoScreen from "../screens/TabTwoScreen";
 import HomeScreen from '../screens/HomeScreen';
+import VideoUploadScreen from "../screens/VideoUploadScreen";
 
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -45,7 +46,7 @@ export default function BottomTabNavigator() {
             <BottomTab.Screen
     // @ts-ignore
                 name="New"
-                component={TabTwoScreen}
+                component={VideoUploadScreen}
                 options={{
                     tabBarIcon: ({ color }) => <AntDesign name="pluscircleo" size={24} color={color} />,
                 }}
