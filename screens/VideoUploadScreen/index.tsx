@@ -45,9 +45,11 @@ const VideoUploadScreen = () => {
             <View style={tw`flex mb-10`}>
             <TouchableOpacity activeOpacity={0.8}>
                 <View style={tw`flex bg-gray-100 mx-10 rounded-lg`}>
-                    <Button title="Pick a video from camera roll" onPress={pickVideo} />
+                    {!video && <Button title="Pick a video from camera roll" onPress={pickVideo} />}
             {/*// @ts-ignore*/}
-                    {video && <VideoPlayer source={{ uri: video }} style={{ width: 200, height: 200 }}  thumbnailURI={}/>}
+                    <View style={{position: 'absolute', top: -700}}>
+                        {video && <VideoPlayer videoURI={video}/>}
+                    </View>
                 </View>
             </TouchableOpacity>
             </View>

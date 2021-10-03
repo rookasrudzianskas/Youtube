@@ -5,7 +5,7 @@ import {loadAsync} from "expo-font";
 
 interface VideoPlayerProps {
     videoURI: string,
-    thumbnailURI: string,
+    thumbnailURI?: string,
 }
 
 const VideoPlayer = (props: VideoPlayerProps) => {
