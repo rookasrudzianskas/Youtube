@@ -5,7 +5,7 @@ import tw from "tailwind-react-native-classnames";
 
 const VideoUploadScreen = () => {
 
-    const [image, setImage] = useState(null);
+    const [video, setVideo] = useState(null);
 
     useEffect(() => {
         (async () => {
@@ -31,7 +31,7 @@ const VideoUploadScreen = () => {
 
         if (!result.cancelled) {
             //@ts-ignore
-            setImage(result.uri);
+            setVideo(result.uri);
         }
     };
 
@@ -48,7 +48,7 @@ const VideoUploadScreen = () => {
                 <View style={tw`flex bg-gray-100 mx-10 rounded-lg`}>
                     <Button title="Pick a video from camera roll" onPress={pickImage} />
             {/*// @ts-ignore*/}
-                    {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+                    {video && <Image source={{ uri: video }} style={{ width: 200, height: 200 }} />}
                 </View>
             </TouchableOpacity>
             </View>
