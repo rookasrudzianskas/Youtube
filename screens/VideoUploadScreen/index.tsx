@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Image, View, Platform, Text, TouchableOpacity } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import tw from "tailwind-react-native-classnames";
+import VideoPlayer from "../../components/VideoPlayer";
 
 const VideoUploadScreen = () => {
 
@@ -46,7 +47,7 @@ const VideoUploadScreen = () => {
                 <View style={tw`flex bg-gray-100 mx-10 rounded-lg`}>
                     <Button title="Pick a video from camera roll" onPress={pickVideo} />
             {/*// @ts-ignore*/}
-                    {video && <Image source={{ uri: video }} style={{ width: 200, height: 200 }} />}
+                    {video && <VideoPlayer source={{ uri: video }} style={{ width: 200, height: 200 }} />}
                 </View>
             </TouchableOpacity>
             </View>
