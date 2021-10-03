@@ -5,6 +5,7 @@ import tw from "tailwind-react-native-classnames";
 import VideoPlayer from "../../components/VideoPlayer";
 // @ts-ignore
 import { v4 as uuidv4 } from 'uuid';
+import {Storage} from 'aws-amplify';
 
 
 const VideoUploadScreen = () => {
@@ -47,7 +48,6 @@ const VideoUploadScreen = () => {
             // @ts-ignore
             const response = await fetch(video?.uri);
             const blob = await response.blob();
-            // @ts-ignore
             await Storage.put('yourKeyHere', blob, {
                 contentType: 'image/jpeg', // contentType is optional
             });
