@@ -32,17 +32,26 @@ const VideoUploadScreen = () => {
             return null;
         }
 
-        try {
             const { uri } = await VideoThumbnails.getThumbnailAsync(
                 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
                 {
                     time: 1000,
                 }
             );
-            // setImage(uri);
-        } catch (e) {
-            console.warn(e);
-        }
+
+            try {
+                // @ts-ignore
+                const response = await fetch(uri);
+                const blob = await response.blob();
+                const fileKey = `${uuidv4()}.mp4`;
+                await Storage.put(fileKey, blob);
+                console.warn("DONE");
+                return fileKey;
+            } catch (err) {
+                console.log('Error uploading file:', err);
+                return null;
+            }
+
     }
 
 
