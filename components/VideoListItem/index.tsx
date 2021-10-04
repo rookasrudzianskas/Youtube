@@ -33,10 +33,13 @@ const VideoListItem = (props: VideoListItemProps) => {
         if(!video){
             return null;
         }
+        if(video.thumbnail.startsWith('http')) {
+            setImage(video.thumbnail);
+        } else {
+            Storage.get(video.thumbnail).then(setImage);
+        }
 
         // @ts-ignore
-        Storage.get(video.thumbnail).then(setImage);
-
     }, [video]);
 
     let viewsString = video.views.toString();
