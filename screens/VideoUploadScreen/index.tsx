@@ -14,6 +14,7 @@ import * as VideoThumbnails from 'expo-video-thumbnails';
 const VideoUploadScreen = () => {
 
     const [video, setVideo] = useState<string | null>(null);
+    const [thumbnail, setThumbnail] = useState<string | null>(null);
 
     useEffect(() => {
         (async () => {
