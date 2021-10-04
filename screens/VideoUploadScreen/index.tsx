@@ -132,7 +132,7 @@ const VideoUploadScreen = () => {
             </View>
 
             <View style={tw`flex mb-10`}>
-                <View style={tw``}>
+                {video && <View style={tw``}>
                     <TextInput
                         placeholder="Enter the video title 🚀"
                         value={title}
@@ -143,10 +143,10 @@ const VideoUploadScreen = () => {
                             py-3
                             rounded-lg
                             px-2
-                            mb-4
+                            mb-64
                         `}
                     />
-                </View>
+                </View>}
             <TouchableOpacity activeOpacity={0.8}>
                 <View style={tw`flex bg-gray-100 mx-10 rounded-lg`}>
                     {!video && <Button title="Pick a video from camera roll" onPress={pickVideo} />}
