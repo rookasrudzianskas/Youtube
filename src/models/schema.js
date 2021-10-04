@@ -328,7 +328,7 @@ export const schema = {
                 "dislikes": {
                     "name": "dislikes",
                     "isArray": false,
-                    "type": "String",
+                    "type": "Int",
                     "isRequired": true,
                     "attributes": []
                 },
@@ -430,5 +430,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "386f8a59137ca90241c6ab9fa9a2bfe4"
+    "version": "539b60c6221aa4d9af749e432398827a"
 };

@@ -29,9 +29,8 @@ type Video @model @key(name: "byUser", fields: ["userID"]) @auth(rules: [{allow:
   views: Int!
   tags: String
   likes: Int!
-  dislikes: String!
+  dislikes: Int!
   User: User @connection
   Comments: [Comment] @connection(keyName: "byVideo", fields: ["id"])
   userID: ID
 }
- 

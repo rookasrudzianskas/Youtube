@@ -55,7 +55,7 @@ export declare class Video {
   readonly views: number;
   readonly tags?: string;
   readonly likes: number;
-  readonly dislikes: string;
+  readonly dislikes: number;
   readonly User?: User;
   readonly Comments?: (Comment | null)[];
   readonly userID?: string;

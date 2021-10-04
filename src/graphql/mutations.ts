@@ -14,21 +14,33 @@ export const createComment = /* GraphQL */ `
       dislikes
       replies
       videoID
+      userID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
       User {
         id
         name
         image
         subscribers
-        Videos {
-          nextToken
-        }
-        Comments {
-          nextToken
-        }
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
+        Comments {
+          nextToken
+          startedAt
+        }
         owner
+        Videos {
+          nextToken
+          startedAt
+        }
       }
       Video {
         id
@@ -40,28 +52,31 @@ export const createComment = /* GraphQL */ `
         tags
         likes
         dislikes
+        userID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        Comments {
+          nextToken
+          startedAt
+        }
         User {
           id
           name
           image
           subscribers
           sub
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
           owner
         }
-        Comments {
-          nextToken
-        }
-        userID
-        createdAt
-        updatedAt
         owner
       }
-      userID
-      createdAt
-      updatedAt
-      owner
     }
   }
 `;
@@ -77,21 +92,33 @@ export const updateComment = /* GraphQL */ `
       dislikes
       replies
       videoID
+      userID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
       User {
         id
         name
         image
         subscribers
-        Videos {
-          nextToken
-        }
-        Comments {
-          nextToken
-        }
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
+        Comments {
+          nextToken
+          startedAt
+        }
         owner
+        Videos {
+          nextToken
+          startedAt
+        }
       }
       Video {
         id
@@ -103,28 +130,31 @@ export const updateComment = /* GraphQL */ `
         tags
         likes
         dislikes
+        userID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        Comments {
+          nextToken
+          startedAt
+        }
         User {
           id
           name
           image
           subscribers
           sub
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
           owner
         }
-        Comments {
-          nextToken
-        }
-        userID
-        createdAt
-        updatedAt
         owner
       }
-      userID
-      createdAt
-      updatedAt
-      owner
     }
   }
 `;
@@ -140,21 +170,33 @@ export const deleteComment = /* GraphQL */ `
       dislikes
       replies
       videoID
+      userID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
       User {
         id
         name
         image
         subscribers
-        Videos {
-          nextToken
-        }
-        Comments {
-          nextToken
-        }
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
+        Comments {
+          nextToken
+          startedAt
+        }
         owner
+        Videos {
+          nextToken
+          startedAt
+        }
       }
       Video {
         id
@@ -166,28 +208,31 @@ export const deleteComment = /* GraphQL */ `
         tags
         likes
         dislikes
+        userID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        Comments {
+          nextToken
+          startedAt
+        }
         User {
           id
           name
           image
           subscribers
           sub
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
           owner
         }
-        Comments {
-          nextToken
-        }
-        userID
-        createdAt
-        updatedAt
         owner
       }
-      userID
-      createdAt
-      updatedAt
-      owner
     }
   }
 `;
@@ -201,6 +246,32 @@ export const createUser = /* GraphQL */ `
       name
       image
       subscribers
+      sub
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      Comments {
+        items {
+          id
+          comment
+          likes
+          dislikes
+          replies
+          videoID
+          userID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      owner
       Videos {
         items {
           id
@@ -213,31 +284,16 @@ export const createUser = /* GraphQL */ `
           likes
           dislikes
           userID
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
           owner
         }
         nextToken
+        startedAt
       }
-      Comments {
-        items {
-          id
-          comment
-          likes
-          dislikes
-          replies
-          videoID
-          userID
-          createdAt
-          updatedAt
-          owner
-        }
-        nextToken
-      }
-      sub
-      createdAt
-      updatedAt
-      owner
     }
   }
 `;
@@ -251,6 +307,32 @@ export const updateUser = /* GraphQL */ `
       name
       image
       subscribers
+      sub
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      Comments {
+        items {
+          id
+          comment
+          likes
+          dislikes
+          replies
+          videoID
+          userID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      owner
       Videos {
         items {
           id
@@ -263,31 +345,16 @@ export const updateUser = /* GraphQL */ `
           likes
           dislikes
           userID
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
           owner
         }
         nextToken
+        startedAt
       }
-      Comments {
-        items {
-          id
-          comment
-          likes
-          dislikes
-          replies
-          videoID
-          userID
-          createdAt
-          updatedAt
-          owner
-        }
-        nextToken
-      }
-      sub
-      createdAt
-      updatedAt
-      owner
     }
   }
 `;
@@ -301,6 +368,32 @@ export const deleteUser = /* GraphQL */ `
       name
       image
       subscribers
+      sub
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      Comments {
+        items {
+          id
+          comment
+          likes
+          dislikes
+          replies
+          videoID
+          userID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+        startedAt
+      }
+      owner
       Videos {
         items {
           id
@@ -313,31 +406,16 @@ export const deleteUser = /* GraphQL */ `
           likes
           dislikes
           userID
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
           owner
         }
         nextToken
+        startedAt
       }
-      Comments {
-        items {
-          id
-          comment
-          likes
-          dislikes
-          replies
-          videoID
-          userID
-          createdAt
-          updatedAt
-          owner
-        }
-        nextToken
-      }
-      sub
-      createdAt
-      updatedAt
-      owner
     }
   }
 `;
@@ -356,22 +434,12 @@ export const createVideo = /* GraphQL */ `
       tags
       likes
       dislikes
-      User {
-        id
-        name
-        image
-        subscribers
-        Videos {
-          nextToken
-        }
-        Comments {
-          nextToken
-        }
-        sub
-        createdAt
-        updatedAt
-        owner
-      }
+      userID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
       Comments {
         items {
           id
@@ -381,15 +449,37 @@ export const createVideo = /* GraphQL */ `
           replies
           videoID
           userID
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
           owner
         }
         nextToken
+        startedAt
       }
-      userID
-      createdAt
-      updatedAt
+      User {
+        id
+        name
+        image
+        subscribers
+        sub
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        Comments {
+          nextToken
+          startedAt
+        }
+        owner
+        Videos {
+          nextToken
+          startedAt
+        }
+      }
       owner
     }
   }
@@ -409,22 +499,12 @@ export const updateVideo = /* GraphQL */ `
       tags
       likes
       dislikes
-      User {
-        id
-        name
-        image
-        subscribers
-        Videos {
-          nextToken
-        }
-        Comments {
-          nextToken
-        }
-        sub
-        createdAt
-        updatedAt
-        owner
-      }
+      userID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
       Comments {
         items {
           id
@@ -434,15 +514,37 @@ export const updateVideo = /* GraphQL */ `
           replies
           videoID
           userID
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
           owner
         }
         nextToken
+        startedAt
       }
-      userID
-      createdAt
-      updatedAt
+      User {
+        id
+        name
+        image
+        subscribers
+        sub
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        Comments {
+          nextToken
+          startedAt
+        }
+        owner
+        Videos {
+          nextToken
+          startedAt
+        }
+      }
       owner
     }
   }
@@ -462,22 +564,12 @@ export const deleteVideo = /* GraphQL */ `
       tags
       likes
       dislikes
-      User {
-        id
-        name
-        image
-        subscribers
-        Videos {
-          nextToken
-        }
-        Comments {
-          nextToken
-        }
-        sub
-        createdAt
-        updatedAt
-        owner
-      }
+      userID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
       Comments {
         items {
           id
@@ -487,15 +579,37 @@ export const deleteVideo = /* GraphQL */ `
           replies
           videoID
           userID
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
           owner
         }
         nextToken
+        startedAt
       }
-      userID
-      createdAt
-      updatedAt
+      User {
+        id
+        name
+        image
+        subscribers
+        sub
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        Comments {
+          nextToken
+          startedAt
+        }
+        owner
+        Videos {
+          nextToken
+          startedAt
+        }
+      }
       owner
     }
   }
