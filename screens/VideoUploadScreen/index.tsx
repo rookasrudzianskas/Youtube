@@ -139,6 +139,14 @@ const VideoUploadScreen = () => {
     return (
 
         <View style={tw`flex flex-1`}>
+                <View style={{width: '100%', height: 3, backgroundColor: 'light-blue'}}>
+                    <Text style={tw`text-white`}>Rokas</Text>
+                    <Text style={tw`text-white`}>Rokas</Text>
+                    <Text style={tw`text-white`}>Rokas</Text>
+                    <Text style={tw`text-white`}>Rokas</Text>
+                    <Text style={tw`text-white`}>Rokas</Text>
+                    <Text style={tw`text-white`}>Rokas</Text>
+                </View>
             <View style={tw`mt-10 flex items-center flex-1`}>
                 <Text style={tw`text-white text-lg`}>Upload Video</Text>
             </View>
