@@ -6,10 +6,10 @@ import VideoPlayer from "../../components/VideoPlayer";
 import "react-native-get-random-values";
 // @ts-ignore
 import { v4 as uuidv4 } from 'uuid';
-import {Storage, DataStore} from 'aws-amplify';
+import {Storage, DataStore, Auth} from 'aws-amplify';
 import * as VideoThumbnails from 'expo-video-thumbnails';
 // @ts-ignore
-import {Post} from '../../src/models';
+import {Post, User} from '../../src/models';
 
 
 
@@ -94,6 +94,16 @@ const VideoUploadScreen = () => {
         }
         const fileKey = await uploadVideo();
         const thumbnailKey = await generateThumbnail();
+
+        const userInfo = await Auth.currentAuthenticatedUser();
+        const userSub = userInfo.attributes.sub;
+
+        const user = (await DataStore.query(User)).find((u) => u.sub === userSub);
+
+        if (!user || !fileKey || !thumbnailKey) {
+            console.error("User not found");
+            return;
+        }
 
         await DataStore.save(new Post({
             title:,
