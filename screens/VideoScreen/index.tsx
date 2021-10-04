@@ -39,24 +39,22 @@ const VideoScreen = () => {
         // console.warn("Rokas");
     }
 
-    //@ts-ignore
     useEffect(() => {
-        if(!video){
-            return null;
+        if (!video) {
+            return;
         }
-        if(video.videoUrl.startsWith('http')) {
+
+        if (video?.videoUrl.startsWith("http")) {
             setVideoUrl(video.videoUrl);
         } else {
             Storage.get(video.videoUrl).then(setVideoUrl);
         }
 
-        if(video.thumbnail.startsWith('http')) {
-            setVideoUrl(video.thumbnail);
+        if (video.thumbnail.startsWith("http")) {
+            setImage(video.thumbnail);
         } else {
             Storage.get(video.thumbnail).then(setImage);
         }
-
-        // @ts-ignore
     }, [video]);
 
 
@@ -112,7 +110,7 @@ const VideoScreen = () => {
             <View style={tw``}>
                 {/*<Image source={{uri: video?.thumbnail}} style={{width: '100%', aspectRatio: 16/9}} />*/}
                 {/*// @ts-ignore*/}
-                <VideoPlayer thumbnailURI={image || video?.thumbnailURI} videoURI={videoUrl || video?.videoURI}/>
+                <VideoPlayer videoURI={videoUrl} thumbnailURI={video.thumbnail} />
             </View>
 
             <View style={tw`flex`}>
