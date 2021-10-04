@@ -20,7 +20,7 @@ const VideoUploadScreen = () => {
     const [thumbnail, setThumbnail] = useState<string | null>(null);
     const [duration, setDuration] = useState(0);
     const [title, setTitle] = useState("");
-    const [progress, setProgress] = useState(0);
+    const [progress, setProgress] = useState(0.0);
 
     useEffect(() => {
         (async () => {
@@ -85,7 +85,12 @@ const VideoUploadScreen = () => {
             const response = await fetch(video);
             const blob = await response.blob();
             const fileKey = `${uuidv4()}.mp4`;
-            await Storage.put(fileKey, blob);
+            await Storage.put(fileKey, blob, {
+                progressCallback: (p) => {
+                    console.log(progress);
+                    setProgress(p);
+                }
+            });
             console.warn("DONE");
             return fileKey;
         } catch (err) {
