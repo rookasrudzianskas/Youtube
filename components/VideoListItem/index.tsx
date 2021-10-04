@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Image, Text, TouchableOpacity} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo} from "@expo/vector-icons";
@@ -26,6 +26,13 @@ const VideoListItem = (props: VideoListItemProps) => {
     const minutes = Math.floor(video.duration / 60);
     const seconds = video.duration % 60;
     const [image, setImage] = useState<string | null>(null);
+
+    useEffect(() => {
+        if(!video){
+            return null;
+        }
+
+    }, [video]);
 
     let viewsString = video.views.toString();
     if (video.views > 1_000_000){
