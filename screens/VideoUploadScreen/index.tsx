@@ -110,22 +110,25 @@ const VideoUploadScreen = () => {
             return;
         }
 
-        await DataStore.save(new Video({
-            title: title,
-            thumbnail: thumbnailKey,
-            videoUrl: fileKey,
-            duration: duration,
-            views: 0,
-            likes: 0,
-            dislikes: 0,
-            userID: user.id.toString(),
-        }));
+        await DataStore.save(
+            new Video({
+                title,
+                thumbnail: thumbnailKey,
+                videoUrl: fileKey,
+                duration,
+                views: 0,
+                likes: 0,
+                dislikes: 0,
+                userID: user.id,
+            })
+        );
 
-        setTitle('');
-        setDuration(0);
+
         setVideo(null);
+        setDuration(0);
+        setTitle("");
+        // setProgress(0);
 
-        console.warn("THE VIDEO IS UPLOADED TO THE DB 🚀");
         const navigation = useNavigation();
         // @ts-ignore
         navigation.navigate('HomeScreen');
