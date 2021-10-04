@@ -98,6 +98,12 @@ const VideoUploadScreen = () => {
         await DataStore.save(new Post({
             title:,
             thumbnail:,
+            videoUrl:,
+            duration:,
+            views: 0,
+            likes: 0,
+            dislikes: 0,
+            userID:,
         }))
     }
 
