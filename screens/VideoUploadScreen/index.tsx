@@ -120,7 +120,9 @@ const VideoUploadScreen = () => {
             userID: user.id.toString(),
         }));
 
-        console.warn("THE VIDEO IS UPLOADED TO THE DB 🚀")
+        setTitle('');
+
+        console.warn("THE VIDEO IS UPLOADED TO THE DB 🚀");
     }
 
     // @ts-ignore
