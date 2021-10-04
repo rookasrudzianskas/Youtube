@@ -112,7 +112,6 @@ const VideoUploadScreen = () => {
             duration: 0,
             views: 0,
             likes: 0,
-        // @ts-ignore
             dislikes: 0,
             userID: user.id.toString(),
         }))
