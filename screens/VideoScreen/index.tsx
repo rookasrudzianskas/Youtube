@@ -20,7 +20,7 @@ import BottomSheet, {BottomSheetModal} from "@gorhom/bottom-sheet";
 import VideoComments from "../../components/VideoComments";
 import VideoComment from "../../components/VideoComment";
 import {useRoute} from "@react-navigation/native";
-import { DataStore } from 'aws-amplify';
+import {DataStore, Storage} from 'aws-amplify';
 import {Video} from '../../src/models';
 import {Comment} from '../../src/models';
 // import comments from '../../assets/data/comments';
@@ -34,6 +34,20 @@ const VideoScreen = () => {
         commentsSheetRef.current?.expand();
         // console.warn("Rokas");
     }
+
+    //@ts-ignore
+    useEffect(() => {
+        if(!video){
+            return null;
+        }
+        if(video.videoUrl.startsWith('http')) {
+            setVideoUrl(video.videoUrl);
+        } else {
+            Storage.get(video.videoUrl).then(setVideoUrl);
+        }
+
+        // @ts-ignore
+    }, [video]);
 
     // @ts-ignore
     const [video, setVideo] = useState<Video | undefined>();
