@@ -139,9 +139,14 @@ const VideoUploadScreen = () => {
     return (
 
         <View style={tw`flex flex-1`}>
-            <View style={{width: '100%', height: 3, backgroundColor: 'light-blue', marginTop: 100}}>
-
-            </View>
+                <View
+                    style={{
+                        width: `${progress * 100}%`,
+                        height: 3,
+                        backgroundColor: "blue",
+                        marginTop: 100
+                    }}
+                />
             <View style={tw`mt-10 flex items-center flex-1`}>
                 <Text style={tw`text-white text-lg`}>Upload Video</Text>
             </View>
