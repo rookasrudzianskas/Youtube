@@ -127,7 +127,7 @@ const VideoUploadScreen = () => {
 
         console.warn("THE VIDEO IS UPLOADED TO THE DB 🚀");
         const navigation = useNavigation();
-        navigation.navigate('Home');
+        navigation.navigate('HomeScreen');
     }
 
     // @ts-ignore
