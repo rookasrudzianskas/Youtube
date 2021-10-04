@@ -27,7 +27,7 @@ const VideoUploadScreen = () => {
         })();
     }, []);
 
-    const generateThumbnail = async (): Promise => {
+    const generateThumbnail = async () => {
 
     }
 
