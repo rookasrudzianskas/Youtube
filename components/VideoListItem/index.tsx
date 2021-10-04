@@ -3,6 +3,7 @@ import {View, Image, Text, TouchableOpacity} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo} from "@expo/vector-icons";
 import {useNavigation} from "@react-navigation/native";
+import {Storage} from 'aws-amplify';
 
 interface VideoListItemProps {
     video: {
