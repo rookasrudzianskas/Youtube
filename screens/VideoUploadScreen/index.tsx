@@ -49,9 +49,8 @@ const VideoUploadScreen = () => {
             const response = await fetch(video?.uri);
             const blob = await response.blob();
             const fileKey = `${uuidv4()}.mp4`;
-            await Storage.put(fileKey, blob, {
-                contentType: 'image/jpeg', // contentType is optional
-            });
+            await Storage.put(fileKey, blob);
+            return fileKey;
         } catch (err) {
             console.log('Error uploading file:', err);
         }
