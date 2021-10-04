@@ -6,7 +6,7 @@ import VideoPlayer from "../../components/VideoPlayer";
 import "react-native-get-random-values";
 // @ts-ignore
 import { v4 as uuidv4 } from 'uuid';
-import {Storage} from 'aws-amplify';
+import {Storage, DataStore} from 'aws-amplify';
 import * as VideoThumbnails from 'expo-video-thumbnails';
 
 
