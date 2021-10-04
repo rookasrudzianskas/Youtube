@@ -50,7 +50,7 @@ const VideoScreen = () => {
         if(video.thumbnail.startsWith('http')) {
             setVideoUrl(video.thumbnail);
         } else {
-            Storage.get(video.thumbnail).then(setVideoUrl);
+            Storage.get(video.thumbnail).then(setImage);
         }
 
         // @ts-ignore
@@ -111,7 +111,7 @@ const VideoScreen = () => {
             <View style={tw``}>
                 {/*<Image source={{uri: video?.thumbnail}} style={{width: '100%', aspectRatio: 16/9}} />*/}
                 {/*// @ts-ignore*/}
-                <VideoPlayer thumbnailURI={video?.thumbnail} videoURI={videoUrl}/>
+                <VideoPlayer thumbnailURI={image} videoURI={videoUrl}/>
             </View>
 
             <View style={tw`flex`}>
