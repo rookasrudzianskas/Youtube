@@ -106,10 +106,10 @@ const VideoUploadScreen = () => {
         }
 
         await DataStore.save(new Video({
-            title:,
-            thumbnail:,
-            videoUrl:,
-            duration:,
+            title: 'rokas',
+            thumbnail: thumbnailKey,
+            videoUrl: fileKey,
+            duration: 0,
             views: 0,
             likes: 0,
         // @ts-ignore
