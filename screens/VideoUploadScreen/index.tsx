@@ -110,7 +110,7 @@ const VideoUploadScreen = () => {
         }
 
         await DataStore.save(new Video({
-            title: 'rokas',
+            title: title,
             thumbnail: thumbnailKey,
             videoUrl: fileKey,
             duration: duration,
