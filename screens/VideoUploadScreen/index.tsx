@@ -118,7 +118,9 @@ const VideoUploadScreen = () => {
             likes: 0,
             dislikes: 0,
             userID: user.id.toString(),
-        }))
+        }));
+
+        console.warn("THE VIDEO IS UPLOADED TO THE DB 🚀")
     }
 
     // @ts-ignore
