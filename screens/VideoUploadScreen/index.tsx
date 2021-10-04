@@ -56,8 +56,8 @@ const VideoUploadScreen = () => {
         }
     }
 
-    const uploadPost = () => {
-        if(!video) {
+    const uploadPost = async () => {
+        if (!video) {
             return;
         }
         const fileKey = await uploadVideo();
