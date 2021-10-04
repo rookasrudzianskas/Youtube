@@ -7,6 +7,8 @@ import "react-native-get-random-values";
 // @ts-ignore
 import { v4 as uuidv4 } from 'uuid';
 import {Storage} from 'aws-amplify';
+import * as VideoThumbnails from 'expo-video-thumbnails';
+
 
 
 const VideoUploadScreen = () => {
@@ -48,10 +50,10 @@ const VideoUploadScreen = () => {
         try {
             // @ts-ignore
             const response = await fetch(video?.uri);
+            console.warn("DONE");
             const blob = await response.blob();
             const fileKey = `${uuidv4()}.mp4`;
             await Storage.put(fileKey, blob);
-            console.warn("DONE");
             return fileKey;
         } catch (err) {
             console.log('Error uploading file:', err);
