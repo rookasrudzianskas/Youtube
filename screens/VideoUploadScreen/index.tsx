@@ -60,6 +60,7 @@ const VideoUploadScreen = () => {
         if(!video) {
             return;
         }
+        const fileKey = await uploadVideo();
     }
 
     // @ts-ignore
