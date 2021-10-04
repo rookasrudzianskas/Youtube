@@ -128,7 +128,7 @@ const VideoUploadScreen = () => {
         setVideo(null);
         setDuration(0);
         setTitle("");
-        // setProgress(0);
+        setProgress(0);
 
         const navigation = useNavigation();
         // @ts-ignore
