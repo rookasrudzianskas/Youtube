@@ -110,7 +110,7 @@ const VideoScreen = () => {
             <View style={tw``}>
                 {/*<Image source={{uri: video?.thumbnail}} style={{width: '100%', aspectRatio: 16/9}} />*/}
                 {/*// @ts-ignore*/}
-                <VideoPlayer videoURI={videoUrl} thumbnailURI={video.thumbnail} />
+                <VideoPlayer thumbnailURI={video?.thumbnail} videoURI={video?.videoUrl}/>
             </View>
 
             <View style={tw`flex`}>
