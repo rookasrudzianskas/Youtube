@@ -29,6 +29,7 @@ const VideoScreen = () => {
 
     const commentsSheetRef = useRef<BottomSheetModal>(null);
     const [videoUrl, setVideoUrl] = useState<string | null>(null);
+    const [image, setImage] = useState<string | null>(null);
 
     const openComments = () => {
         commentsSheetRef.current?.expand();
@@ -44,6 +45,12 @@ const VideoScreen = () => {
             setVideoUrl(video.videoUrl);
         } else {
             Storage.get(video.videoUrl).then(setVideoUrl);
+        }
+
+        if(video.thumbnail.startsWith('http')) {
+            setVideoUrl(video.thumbnail);
+        } else {
+            Storage.get(video.thumbnail).then(setVideoUrl);
         }
 
         // @ts-ignore
@@ -104,7 +111,7 @@ const VideoScreen = () => {
             <View style={tw``}>
                 {/*<Image source={{uri: video?.thumbnail}} style={{width: '100%', aspectRatio: 16/9}} />*/}
                 {/*// @ts-ignore*/}
-                <VideoPlayer thumbnailURI={video?.thumbnail} videoURI={video?.videoUrl}/>
+                <VideoPlayer thumbnailURI={video?.thumbnail} videoURI={videoUrl}/>
             </View>
 
             <View style={tw`flex`}>
