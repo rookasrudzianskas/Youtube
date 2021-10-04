@@ -53,6 +53,7 @@ const VideoUploadScreen = () => {
             return fileKey;
         } catch (err) {
             console.log('Error uploading file:', err);
+            return null;
         }
     }
 
