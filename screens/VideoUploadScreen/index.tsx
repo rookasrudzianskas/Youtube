@@ -8,6 +8,8 @@ import "react-native-get-random-values";
 import { v4 as uuidv4 } from 'uuid';
 import {Storage, DataStore} from 'aws-amplify';
 import * as VideoThumbnails from 'expo-video-thumbnails';
+// @ts-ignore
+import {Post} from '../../src/models';
 
 
 
