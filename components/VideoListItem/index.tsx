@@ -27,10 +27,14 @@ const VideoListItem = (props: VideoListItemProps) => {
     const seconds = video.duration % 60;
     const [image, setImage] = useState<string | null>(null);
 
+    //@ts-ignore
     useEffect(() => {
         if(!video){
             return null;
         }
+
+        // @ts-ignore
+        Storage.get(video.thumbnail).then(setImage);
 
     }, [video]);
 
