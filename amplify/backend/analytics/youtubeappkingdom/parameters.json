@@ -1,0 +1,21 @@
+{
+    "appName": "youtubeappkingdom",
+    "roleName": "pinpointLambdaRole9eae8f7e",
+    "cloudformationPolicyName": "cloudformationPolicy9eae8f7e",
+    "cloudWatchPolicyName": "cloudWatchPolicy9eae8f7e",
+    "pinpointPolicyName": "pinpointPolicy9eae8f7e",
+    "authPolicyName": "pinpoint_amplify_9eae8f7e",
+    "unauthPolicyName": "pinpoint_amplify_9eae8f7e",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}
