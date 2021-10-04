@@ -30,6 +30,9 @@ const VideoScreen = () => {
     const commentsSheetRef = useRef<BottomSheetModal>(null);
     const [videoUrl, setVideoUrl] = useState<string | null>(null);
     const [image, setImage] = useState<string | null>(null);
+    // @ts-ignore
+    const [video, setVideo] = useState<Video | undefined>();
+    const [comments, setComments] = useState<Comment[]>([]);
 
     const openComments = () => {
         commentsSheetRef.current?.expand();
@@ -56,9 +59,7 @@ const VideoScreen = () => {
         // @ts-ignore
     }, [video]);
 
-    // @ts-ignore
-    const [video, setVideo] = useState<Video | undefined>();
-    const [comments, setComments] = useState<Comment[]>([]);
+
 
     if(video === null) {
         return (
@@ -111,7 +112,7 @@ const VideoScreen = () => {
             <View style={tw``}>
                 {/*<Image source={{uri: video?.thumbnail}} style={{width: '100%', aspectRatio: 16/9}} />*/}
                 {/*// @ts-ignore*/}
-                <VideoPlayer thumbnailURI={image} videoURI={videoUrl}/>
+                <VideoPlayer thumbnailURI={image || video?.thumbnailURI} videoURI={videoUrl || video?.videoURI}/>
             </View>
 
             <View style={tw`flex`}>
