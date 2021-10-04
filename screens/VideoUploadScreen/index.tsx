@@ -27,6 +27,10 @@ const VideoUploadScreen = () => {
         })();
     }, []);
 
+    const generateThumbnail = async (): Promise => {
+
+    }
+
 
     const pickVideo = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
