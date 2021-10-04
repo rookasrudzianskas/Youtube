@@ -68,7 +68,7 @@ const VideoUploadScreen = () => {
         if (!result.cancelled) {
             setVideo(result.uri);
             // @ts-ignore
-            setDuration(result.duration);
+            setDuration(Math.floor(result.duration / 100));
         }
     };
 
@@ -113,7 +113,7 @@ const VideoUploadScreen = () => {
             title: 'rokas',
             thumbnail: thumbnailKey,
             videoUrl: fileKey,
-            duration: 0,
+            duration: duration,
             views: 0,
             likes: 0,
             dislikes: 0,
