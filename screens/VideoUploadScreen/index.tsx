@@ -67,6 +67,7 @@ const VideoUploadScreen = () => {
 
         if (!result.cancelled) {
             setVideo(result.uri);
+            // @ts-ignore
             setDuration(result.duration);
         }
     };
