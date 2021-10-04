@@ -92,6 +92,8 @@ const VideoUploadScreen = () => {
         }
         const fileKey = await uploadVideo();
         const thumbnailKey = await generateThumbnail();
+
+        await DataStore.
     }
 
     // @ts-ignore
