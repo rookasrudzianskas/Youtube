@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import {Storage, DataStore, Auth} from 'aws-amplify';
 import * as VideoThumbnails from 'expo-video-thumbnails';
 // @ts-ignore
-import {Post, User} from '../../src/models';
+import {Video, User} from '../../src/models';
 
 
 
@@ -105,13 +105,14 @@ const VideoUploadScreen = () => {
             return;
         }
 
-        await DataStore.save(new Post({
+        await DataStore.save(new Video({
             title:,
             thumbnail:,
             videoUrl:,
             duration:,
             views: 0,
             likes: 0,
+        // @ts-ignore
             dislikes: 0,
             userID: user.id.toString(),
         }))
