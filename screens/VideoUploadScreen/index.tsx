@@ -43,7 +43,7 @@ const VideoUploadScreen = () => {
                 // @ts-ignore
                 const response = await fetch(uri);
                 const blob = await response.blob();
-                const fileKey = `${uuidv4()}.mp4`;
+                const fileKey = `${uuidv4()}.jpg`;
                 await Storage.put(fileKey, blob);
                 console.warn("DONE");
                 return fileKey;
