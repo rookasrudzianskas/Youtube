@@ -36,7 +36,7 @@ const VideoUploadScreen = () => {
             const { uri } = await VideoThumbnails.getThumbnailAsync(
                 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
                 {
-                    time: 15000,
+                    time: 1000,
                 }
             );
             // setImage(uri);
