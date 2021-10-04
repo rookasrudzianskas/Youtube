@@ -45,7 +45,7 @@ const VideoUploadScreen = () => {
                 const blob = await response.blob();
                 const fileKey = `${uuidv4()}.jpg`;
                 await Storage.put(fileKey, blob);
-                console.warn("DONE");
+                console.warn("DONE WITH IMAGE");
                 return fileKey;
             } catch (err) {
                 console.log('Error uploading file:', err);
@@ -94,6 +94,7 @@ const VideoUploadScreen = () => {
             return;
         }
         const fileKey = await uploadVideo();
+        const thumbnailKey = await generateThumbnail();
     }
 
     // @ts-ignore
