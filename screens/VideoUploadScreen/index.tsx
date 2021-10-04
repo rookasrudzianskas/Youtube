@@ -10,6 +10,7 @@ import {Storage, DataStore, Auth} from 'aws-amplify';
 import * as VideoThumbnails from 'expo-video-thumbnails';
 // @ts-ignore
 import {Video, User} from '../../src/models';
+import {useNavigation} from "@react-navigation/native";
 
 
 
@@ -121,8 +122,12 @@ const VideoUploadScreen = () => {
         }));
 
         setTitle('');
+        setDuration(0);
+        setVideo(null);
 
         console.warn("THE VIDEO IS UPLOADED TO THE DB 🚀");
+        const navigation = useNavigation();
+        navigation.navigate('Home');
     }
 
     // @ts-ignore
