@@ -20,6 +20,7 @@ const VideoUploadScreen = () => {
     const [thumbnail, setThumbnail] = useState<string | null>(null);
     const [duration, setDuration] = useState(0);
     const [title, setTitle] = useState("");
+    const [progress, setProgress] = useState();
 
     useEffect(() => {
         (async () => {
