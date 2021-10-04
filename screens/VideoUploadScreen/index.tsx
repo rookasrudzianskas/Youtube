@@ -88,7 +88,7 @@ const VideoUploadScreen = () => {
             await Storage.put(fileKey, blob, {
                 progressCallback: (p) => {
                     console.log(progress);
-                    setProgress(p);
+                    setProgress(p.loaded / p.total);
                 }
             });
             console.warn("DONE");
