@@ -3,7 +3,7 @@ import {View, Image, Text, TouchableOpacity} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Entypo} from "@expo/vector-icons";
 import {useNavigation} from "@react-navigation/native";
-import {Storage} from 'aws-amplify';
+import {Storage, Analytics} from 'aws-amplify';
 
 interface VideoListItemProps {
     video: {
@@ -52,6 +52,7 @@ const VideoListItem = (props: VideoListItemProps) => {
     const navigation = useNavigation();
 
     const openVideoPage = () => {
+        Analytics.record({ name: 'VideoListItemClick'});
        // @ts-ignore
         navigation.navigate('VideoScreen', {id: video.id});
     }
