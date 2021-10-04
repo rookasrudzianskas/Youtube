@@ -3,6 +3,7 @@ import { Button, Image, View, Platform, Text, TouchableOpacity } from 'react-nat
 import * as ImagePicker from 'expo-image-picker';
 import tw from "tailwind-react-native-classnames";
 import VideoPlayer from "../../components/VideoPlayer";
+import "react-native-get-random-values";
 // @ts-ignore
 import { v4 as uuidv4 } from 'uuid';
 import {Storage} from 'aws-amplify';
@@ -47,6 +48,7 @@ const VideoUploadScreen = () => {
         try {
             // @ts-ignore
             const response = await fetch(video?.uri);
+            console.warn("DONE");
             const blob = await response.blob();
             const fileKey = `${uuidv4()}.mp4`;
             await Storage.put(fileKey, blob);
