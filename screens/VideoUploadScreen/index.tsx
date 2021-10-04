@@ -93,7 +93,10 @@ const VideoUploadScreen = () => {
         const fileKey = await uploadVideo();
         const thumbnailKey = await generateThumbnail();
 
-        await DataStore.
+        await DataStore.save(new Post({
+            title:,
+            thumbnail:,
+        }))
     }
 
     // @ts-ignore
