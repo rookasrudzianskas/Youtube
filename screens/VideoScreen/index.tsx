@@ -28,6 +28,7 @@ import {Comment} from '../../src/models';
 const VideoScreen = () => {
 
     const commentsSheetRef = useRef<BottomSheetModal>(null);
+    const [videoUrl, setVideoUrl] = useState<string | null>(null);
 
     const openComments = () => {
         commentsSheetRef.current?.expand();
